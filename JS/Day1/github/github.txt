@@ -1,0 +1,28 @@
+===== install git : https://git-scm.com/install/windows
+=== account on git hub : https://github.com/signup
+
+====== creaTe New REpository
+
+New Folder ===> task ==> R.click ==> gitBash here
+
+git init 
+git add .
+git commit -m "commit msg" =========> first time upload using commands --> 
+
+git config --global user.name ""
+git config --global user.email"" ===> gmail 
+        --------> email , password
+
+
+git commit -m "commit msg"
+git remote add origin https://github.com/ayaatadel/trrrrrrrrrrrrrasand.git
+git push origin master
+
+
+
+
+=============== clone 
+
+r.click ==> on any folder 
+git bash here 
+git clone repo_link
