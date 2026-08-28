@@ -1,0 +1,17 @@
+***************** Agenda *****************
+= history of js
+= where we write js code
+= variables
+= data types
+= operators
+= condition
+= control flow
+= ternary operator
+= communication with user
+
+
+
+============ Js ===========
+inline 
+internal
+external 
