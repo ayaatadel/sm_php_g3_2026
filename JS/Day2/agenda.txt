@@ -14,18 +14,18 @@
          - length 
         - charAt(index) ==> str(index)
         - at(index)
-        - charCodeAt(index)
+      - charCodeAt(index)  =======> Ascii Code ==> a:97 b:98  || A=65 , B:66 
         - indexOf ==> Returns the position of the first occurrence of a substring.
         - lastIndexOf
-        - slice(strat , end)
-        - subString(strat , end)
-        - subStr(strat , end)
+        - slice(strat , end) ============= self study
+        - subString(strat , end) ============= self study
+        - subStr(strat , end) ============= self study
         - toLowerCase
         - toUpperCase
         - includes
         - stratWith
         - endWith
-        - toString
+        - toString  ============= self study
         - concat
         - trim
         - trimStart
@@ -35,17 +35,16 @@
         - repeat(counter)
         - replace('charin',"char enter")
         - replaceAll('charin',"char enter")
-        - split
+      
 
-
- *array and array functions
+ * array and array functions
        * push
        * unshift
        * pop
        * shift
        * indexOf
-       * slice
-       * splice
+       * slice  ================== self study
+       * splice  ============= self study
        * reverse
        * concat
        * at

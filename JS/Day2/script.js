@@ -199,27 +199,27 @@
 //   // anonoums
 //   return "test";
 // }
-  //========= Arrow function ==> anonoums function =>
+//========= Arrow function ==> anonoums function =>
 
-  //     var result=()=>{
-  //         return "hello"
-  //     }
-  // console.log(result());
+//     var result=()=>{
+//         return "hello"
+//     }
+// console.log(result());
 
-  // var result=()=> "hello";
-  //     console.log(result());
+// var result=()=> "hello";
+//     console.log(result());
 
-  //     var result=(x,y)=> x+y;  // return
-  //     console.log(result(5,3));
+//     var result=(x,y)=> x+y;  // return
+//     console.log(result(5,3));
 
-  //         var result=()=>{
-  //       console.log("hello");
+//         var result=()=>{
+//       console.log("hello");
 
-  //     }
-  // result();
+//     }
+// result();
 
-  //============ Self Invoked Function || Immediatly invoked Function  ==> IIF=======
-  // --------------------- function call it self ---------
+//============ Self Invoked Function || Immediatly invoked Function  ==> IIF=======
+// --------------------- function call it self ---------
 // (function () {
 //   console.log("This runs immediately!");
 // })();
@@ -228,6 +228,146 @@
 //   console.log(x);
 // })(5);
 
-( (x)=>{
-  console.log(x);
-})(5);
+// ( (x)=>{
+//   console.log(x);
+// })(5);
+
+//======================= Built In Functions ============
+
+//-- String Functions :
+var trackName = "   AITI PHP Summer Training Track  PHP   ";
+// var name=prompt("enter your name")
+// var email=prompt("enter your email")
+console.log(typeof trackName);
+
+// console.log(trackName.toUpperCase());
+// console.log(trackName.toLowerCase());
+// // console.log(trackName.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+// // console.log(email.toLocaleLowerCase().includes("@"));
+// console.log(trackName.indexOf("PHP"));
+
+// console.log(trackName.trim().length); // remove spaces
+// console.log(trackName.trimStart().length); // remove spaces
+// console.log(trackName.trimEnd().length); // remove spaces
+// console.log(trackName.trim().startsWith("ITI")); // remove spaces
+// console.log(trackName.startsWith("ITI")); // remove spaces
+// console.log(trackName.trim().endsWith("Track")); // remove spaces
+// console.log(trackName.length);
+// console.log(trackName.padEnd(60,"*"));
+// console.log(trackName.padStart(60,"*"));
+// console.log(trackName);
+
+// // console.log(trackName.concat("Open Source"));
+// // trackName=trackName+"Open Source"
+// // trackName=+"open source" // nan
+// console.log(trackName);
+
+// console.log(trackName.repeat(5));
+// console.log(trackName.replace("PHP","test"));
+// console.log(trackName.replaceAll("PHP","test"));
+console.log(trackName.trim().charCodeAt(0)); // Asci Code 
+console.log(trackName.trim().charAt(0)); // character
+
+
+// =============== Array : Can Store Different Data types ============
+//    0        1       2       3
+// var students=["laila","nada","hossam","mahmoud"]
+//----------------- index : place of element in array : start 0
+//----------------- lenght : number of elements in array : 4 elemnts
+// console.log(students);
+// console.log(students[0]); // get element in array
+
+// students[0]="fahd"  // update value in array
+// console.log(students);
+
+// students[4]="abd elrahman"; // add new value in array
+// console.log(students);
+
+/**
+ * Add Element in array
+ * start  : unshift
+ * end    : push
+ * Remove
+ * srart  : shift
+ * end    : pop
+ */
+
+// students.unshift("leena","login","malak")
+// students.unshift([12,true,5])
+
+// students.push("test")
+// students.push(["test","php"])
+// console.log(students);
+
+// students.shift()
+// console.log(students);
+
+// students.pop()
+// console.log(students);
+
+// console.log(students.length); // length of array
+
+// var ar_functions =
+// [
+//     ()=>{
+//       console.log("hello");
+
+//     },
+//     function ()
+//     {
+//         console.log("test");
+
+//     }
+// ]
+
+// ar_functions[0]()
+// ar_functions[1]()
+
+// //============= Loop on array =======
+var students = ["laila", "nada", "hossam", "mahmoud"];
+// // for(var i=0;i<=students.length;i++)
+// // {
+// //     console.log(students[i]);
+
+// // }
+
+// // var test = students ;  // ===> two pointers refer to same place 
+// // console.log(students);
+// // console.log(test);
+
+
+// // test.push("iti")
+// // console.log(students);
+// // console.log(test);
+// //------------------------------------ spread operator -----------------
+// // spread operator   (...)
+// // var test=[...students]
+var grades=[100,200,300]
+// // var test=[];
+
+// // test=[...students ,...grades]
+
+// // console.log(students);
+// // console.log(test);
+// // test.push("iti")
+// // console.log(students);
+// // console.log(test)
+
+
+// // --------------------- reverse array 
+
+// console.log(students.reverse());
+// console.log(students);
+
+// console.log(students.indexOf("nada")); // index of element
+// console.log(students.at(3));  // elemnt in this index
+
+
+// console.log(students.concat(grades)); // not effect on main array
+students=students.concat(grades); // reassignment  ==> change in main array
+console.log(students);
+// console.log(students);
+
+
+
+
