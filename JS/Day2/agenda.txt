@@ -1,0 +1,63 @@
+ *   Agenda :
+ *     - undefined & NaN & Null
+ *     - Functions  (built-in , user defined)
+            -- user defined function 
+                1- Function Declaration :Function functionName(){}
+                2- Function Expression : var functionName = function (){}
+                3- anonymous Function : function(){}
+                4- callback function : funtion call by another function
+                5- higher order function : function call another function
+                6- Immediately Invoked Function Expression(IIFE) || Self Invoked Function:(function(){})
+                7- arrow function : anoumus function that arrow ==> var fun_name=()=>{}
+
+ *     - String and string functions
+         - length 
+        - charAt(index) ==> str(index)
+        - at(index)
+        - charCodeAt(index)
+        - indexOf ==> Returns the position of the first occurrence of a substring.
+        - lastIndexOf
+        - slice(strat , end)
+        - subString(strat , end)
+        - subStr(strat , end)
+        - toLowerCase
+        - toUpperCase
+        - includes
+        - stratWith
+        - endWith
+        - toString
+        - concat
+        - trim
+        - trimStart
+        - trimEnd
+        - padStart
+        - padEnd
+        - repeat(counter)
+        - replace('charin',"char enter")
+        - replaceAll('charin',"char enter")
+        - split
+
+
+ *array and array functions
+       * push
+       * unshift
+       * pop
+       * shift
+       * indexOf
+       * slice
+       * splice
+       * reverse
+       * concat
+       * at
+
+-- global 
+
+var x=5; // global cope
+
+ block scope 
+ function t()
+ {
+    var x= 5; // block scope
+ }
+
+ global scope 
