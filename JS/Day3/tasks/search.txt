@@ -1,2 +1,30 @@
 ===  reduce
 ===  call, apply, bind
+== descructering in array and object
+
+
+var data={
+  id:1,
+  name:"hannen",
+  address : "menoufia",
+  print :()=>
+  {
+    // this ==> refer on window
+    console.log(this);
+  
+         
+  },
+
+  // print()
+  // {
+  //   // console.log(this); : current object (data)
+  //   console.log(this.id);
+  //   console.log(this.name);
+  //   console.log(this.age);
+    
+    
+  // }
+
+}
+
+=== why this in first function refers on window and in second function refers on current object

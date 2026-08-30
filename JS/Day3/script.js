@@ -269,8 +269,15 @@
  * Key
  * value
  * ================== handel values ========
- * 1- prcatice  ex: data["id"]
- * 2- .         ex: data.address
+ * 1- prcatice []  ex: data["id"]
+ * 2- dot (.)        ex: data.address
+ * object.assign()
+ *  object.keys : array has all keys
+ *  object.entries : array has array has each key and value
+ *  object.values : array has all values
+ * 
+ * freeze  : prevent user add , update 
+ * seal  : permit user update but prevent user add any values in object
  */
 
 // var data={
@@ -280,10 +287,232 @@
 
 // }
 
-// console.log(data);
 
 // console.log(data["id"]);  // get value
-// console.log(data["name"]);
+// console.log(data.name);
 
-// data['name']="nada"
+// data['name']="nada"  // update on value 
 // console.log(data.address);
+
+
+// // add new value 
+// data.age=25;
+// console.log(data);
+
+
+// get  all values 
+// console.log(Object.values(data)  );
+// // get all keys
+// console.log(Object.keys(data)  );
+// // get all keys and values ==> array 
+// console.log(Object.entries(data)  );
+
+
+
+// var test={};
+// // test={...data};  // spread operator
+// // console.log(test);
+// // test.name="mahmoud"
+// // console.log(test);
+// // console.log(data);
+          
+//         // (target , source )
+// Object.assign(test,data)
+
+// console.log(test);
+// console.log(data);
+
+// test.name="mahmoud"
+// console.log(test);
+// console.log(data);
+
+
+// var data={
+//   id:1,
+//   name:"hannen",
+//   address : "menoufia"
+
+// }
+
+// // Freeze : prevent user add , update 
+// // Object.freeze(data)
+// // data.name="mahmoud"
+// // console.log(data);
+
+// // data.age=23
+// // console.log(data);
+
+// // seal  : prevent user add new value on object and permit update values in object
+// Object.seal(data)
+
+// data.name="mahmoud" // update
+// console.log(data);
+// data.age=23  // add new value
+// console.log(data);
+
+
+
+// var data={
+//   id:1,
+//   name:"hannen",
+//   address : "menoufia",
+//   // print :()=>
+//   // {
+//   //   // this ==> refer on window
+//   //   console.log(this);
+  
+         
+//   // },
+
+//   // print:function()
+//   // {
+//   //   // console.log(this); : current object 
+//   //   console.log(this.id);
+//   //   console.log(this.name);
+//   //   console.log(this.age);
+    
+    
+//   // }
+//   // print()
+//   // {
+//   //   // console.log(this); : current object 
+//   //   console.log(this.id);
+//   //   console.log(this.name);
+//   //   console.log(this.age);
+    
+    
+//   // }
+
+// }
+
+// console.log(data);
+
+// // data.print() // call 
+
+// ---------------------------- predefined object ------
+/**
+ * Math 
+ * date
+ */
+
+// var names=["mohammed", "mahmoud","nada"]
+// console.log(Math.sin(30));
+// console.log(Math.cos(30));
+// console.log(Math.PI);
+// console.log(Math.max(12,19,88));
+// console.log(Math.min(12,19,88));
+// console.log(Math.min(...numbers));
+// // console.log(Math.max(...numbers));
+
+// console.log(Math.floor(-3.1)); // تقريب للرقم الاقل
+// console.log(Math.ceil(-3.1)); // بتقرب للرقم الاكبر
+// // console.log(Math.trunc(3.5));  // بتشيل الكسر
+// // console.log(Math.trunc(-3.5));  // remove numbers after sign
+
+// // console.log(Math.trunc(Math.random()*10)); // 0-10
+// // console.log(Math.trunc(Math.random()*names.length)); // 0- array.length
+// //     // 0 -- arr.length
+
+// // var names=["mohammed", "mahmoud","nada"]
+// // // names.pop();
+// // // names.pop();
+// // // names.unshift("ali","hossam");
+// // var index=Math.floor(Math.random()*names.length) // rendom index
+// // var index=Math.trunc(Math.random()*names.length) // rendom index
+// // console.log(names[index]);
+
+
+// // var names=["mohammed", "mahmoud","nada"]
+
+// // function randomaNames(arr)
+// // {
+// //   index=Math.trunc(Math.random()*arr.length)
+// //   return    arr[index];
+// // }
+
+// // // randomaNames(names)
+// // console.log(randomaNames(names));
+
+// console.log(Math.sqrt(9));
+// console.log(Math.pow(3,3));
+// console.log(Math.abs(-6));
+// console.log(Math.round(-6.5));
+// console.log(Math.round(6.5));
+
+
+//---------------------- date object ----------
+
+var date=new Date(); 
+//[sunday , monday , ...]
+// console.log(date);
+// console.log(date.getFullYear()); // year
+console.log(date.getDay()); // index of day of week start with 0(sunday)-6(saterday)
+console.log(date.getDate()); // number of day in month ==> start with 1 
+// var currentDay=(date.getDate())+5
+// console.log(currentDay);
+
+console.log(date.getHours()); // hour
+console.log(date.getMinutes()); // minutes
+
+
+//========== Synchronous and Asynchronous functions 
+
+/**
+ *  Synchronous  : function execute line by line 
+ *  Asynchronous : depend on time , event ==> api , setTimeOut , setInterval 
+ */
+
+
+// function print ()
+// {
+//   // first()  
+  
+//   console.log("print");
+// }
+
+// function first()
+// {
+//   // console.log("first");
+//   setTimeout(() => {
+//   console.log("first funtion");
+  
+// }, 2000);
+  
+// }
+
+// print()
+// first()
+
+// setTimeout(() => {
+//   console.log("async funtion");
+  
+// }, 1000);
+
+// setInterval(() => {
+//   console.log("hello");
+  
+// }, 1000);
+
+
+/**
+ * time : ms ==> 1000ms = 1s
+ * setTimeout : function execute after time 
+ * setInterval : function repete execute every time 
+ * clearInterval : function stop interval (تكرار)of setInterval  
+ */
+
+
+//  var interval=setInterval(() => {
+//   console.log("hello");
+  
+// }, 1000);
+
+// setTimeout(() => {
+
+//   clearInterval(interval)
+ 
+
+// }, 5000);
+
+
+
