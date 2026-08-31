@@ -1,4 +1,6 @@
 --------------------------------
+== prototype ====> constructor function 
+== abstraction in oop in js 
 = xml request 
 == promise 
 == async and await 
