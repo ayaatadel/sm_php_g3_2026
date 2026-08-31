@@ -1,0 +1,8 @@
+- Destructring in array & Object
+- Hoisting
+- var , let , const
+- call , bind , apply 
+- constructor function
+- execution in js engine
+=============================
+Dom
