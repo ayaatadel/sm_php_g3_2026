@@ -1,4 +1,4 @@
-.text-contain {
+/* .text-contain {
     color: blue;
     border: 1px solid gray;
     padding: 20px;
@@ -8,16 +8,49 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
+} */
 
 /* #btn:hover {
     color: green;
     background-color: rgb(253, 245, 235);
 } */
 
-.text-info:hover {
+/* .text-info:hover {
     color: red;
     background-color: rgb(253, 245, 235);
     font-family: Arial, Helvetica, sans-serif;
+
+} */
+
+
+.container{
+    display:flex;
+    justify-content:space-around;
+    padding: 20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:25%;
+    border:1px solid gray;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.card img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+}
+
+#pg:hover{
+    color: red;
+    background-color: rgb(253, 245, 235);
 
 }

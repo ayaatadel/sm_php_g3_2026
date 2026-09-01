@@ -27,7 +27,6 @@
    -- Mouse Events
        --click
        --dblclick
-       --dblclick
        --mouseEnter
        --mouseLeave
        --mouseup
