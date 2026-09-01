@@ -1,0 +1,62 @@
+insertAdjacentText ======> self studty
+// event propagation
+// event delegation 
+
+/// 
+/*
+*      innerWidth
+ *      innerHeight
+ *      outerWidth
+ *      outerHight
+ *      - window
+ *          open()
+ *          close()
+ *          focus()
+ *          moveTo()
+ *          moveBy()
+ *          resizeTo()
+ *          resizeBy()
+ *
+ *
+ *      - scroll
+ *          scroll({})
+ *          scroll()
+ *          scrollTo()
+ *          scrollBy()
+ *          scrollY
+ *          scrollX
+ *
+ *
+ *      - screen
+ *          width
+ *          height
+ *          availWidth
+ *          availHeight
+ *          colorDepth
+ *
+ *      - location
+ *           href
+ *           protocol
+ *           host
+ *           hostname
+ *           pathname
+ *           port
+ *           assign()
+ *           replace()
+ *
+ *      - navigator
+ *          online
+ *          language
+ *          languages
+ *
+ *      - history
+ *          forward()
+ *          back()
+ *          go() (2) (-2)
+ *
+ *
+ *      - timers
+ *          - setTimeOut()
+ *          - setInterval()
+ *          - clearInterval()
+ */
