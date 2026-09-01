@@ -1,9 +1,12 @@
 ========> https://dummyjson.com/products : use api 
 
+//============ local storage
+
 create ecommerec web site : data api ^
 
 home : show all products  ===> cards (product image , product title , product price , button : show details, add to cart)
 product details : show product details ===> while click on button show deatails
+add to cart : add product to cart ===> while click on button add to cart
 carts : has all products  ==> click (icon cart )=> show all products in cart (product image , product title , product price , button : remove from cart)
 
 remove from cart : remove product from cart ===> while click on button remove from cart
