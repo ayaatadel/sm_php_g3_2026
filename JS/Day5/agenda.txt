@@ -105,9 +105,9 @@ status tracks the server's HTTP response code (whether the server successfully p
 
 
 server data (response status) :
-200 → Success
+200 → Success  (data already retrieved)
 404 → Not Found
-401 → Unauthorized
+401 → Unauthorized   || authentication : (login , register) || authorization : acces control (admin , user , guest)
 403 → Forbidden
 500 → Server Error
 
@@ -130,7 +130,11 @@ This property tells you which stage the request is currently in. It progresses t
 
 
 
-
+=============== METHOD ============
+Get data : get
+Post data (add data) : post
+Update data : put
+Delete data : delete
 
 
 
