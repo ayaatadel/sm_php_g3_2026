@@ -390,18 +390,22 @@ var user={
  * title
  * images
  * forms
+ * body
  * 
+ * 
+ * ========== cotenet of elemnt ======
+ * innerHTML : change html 
  * 
  */
 
 
 
-let text=document.getElementById("container") // node
+let text=document.getElementById("container") // element
 let textClass=document.getElementsByClassName("main-section") // html collection ==> array (key: index) value(element)
 let text2=document.getElementsByClassName("main-section")[0] // html collection ==>access by index
 let text3=document.getElementsByTagName("p") // html collection 
 let text4=document.getElementsByName("userName") // Node list ==> array
-let text5=document.querySelector("#container")// Node element
+let text5=document.querySelector("#container")// Node element   ====> css  ==> first elenmnet
 let text6=document.querySelectorAll(".main-section")// Node list
 // console.log(document);
 // console.log(text2);
@@ -414,7 +418,6 @@ console.log(text6);
 let pg=document.getElementById("text")
 text.innerHTML=`
 <div style='color:red'> add new content </div>
-
 `
 
 // text.innerText=`
@@ -422,3 +425,7 @@ text.innerHTML=`
 // `
 
 pg.innerText=`new paragarph text loreeeeeeeeeeeeeeeeeeeeeeeeeem`
+
+
+console.log(document.title);
+console.log(document.body);

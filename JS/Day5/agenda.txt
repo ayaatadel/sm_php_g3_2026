@@ -1,0 +1,142 @@
+=== Dom 
+  -- select Elemnts (id , name , class , QuerySelector , QuerySelectorAll)
+  -- public selector (body , images , forms , title)
+  -- Change content 
+      -- innerHtml
+      -- innerText
+      -- textContent ===> element.textContent="value"
+  -- change style 
+    -- elemnt.style.propertity="value"
+    -- elemnt.style.CssText=`all properites`
+ -- change class
+     -- elemnt.classList.add
+     -- elemnt.classList.remove
+     -- elemnt.classList.toggle
+     -- elemnt.classList.contains
+ -- change attributes
+     -- elemnt.getAttribute
+     -- elemnt.setAttribute
+     -- elemnt.removeAttribute
+-- Create Element
+  -- append
+  -- appendChild
+--RemoveElement
+  --element.remove()
+
+===== Event
+   -- Mouse Events
+       --click
+       --dblclick
+       --dblclick
+       --mouseEnter
+       --mouseLeave
+       --mouseup
+       --mouseDown
+  
+   -- Keyboard Events
+     --keyUp
+     --keyDown
+     --keyPress
+          Ex:
+             document.addEventListener("keydown", function (event) {
+                console.log(event.key);
+            });
+   -- Form Events
+       ** preventDefault**
+       --submit
+       --input
+       --change 
+       -- focus
+   -- Input Events
+      --element.addEventListener("input",(e)=>{log(e.target.value)})
+   -- Window Events
+   --load
+   -- resize 
+   -- scroll
+   -- Clipboard Events
+   -- Drag Events
+   -- Focus Events
+   -- Touch Events
+
+==== BOM
+/=============== BOM : Browser Object Model  (browser)
+/**
+ * 
+ * window
+ * inner width
+ * inner height
+ * -------
+ * window
+ * open ()
+ * close
+ * resize
+ * resizeBy
+ * moveTo
+ * moveBy
+ * ------
+ * scroll
+ * scroll x
+ * scroll y
+ * ---------
+ * screen
+ * width
+ * height
+ * --------
+ * location
+ * href
+ * protocol
+ * port
+ * -----
+ * history
+ * ------
+ * navigator
+ * -------
+ * timers
+ */
+
+
+
+
+=== request 
+ == xml ==> http request 
+== promise 
+readyState tracks the progress of the network request itself (whether the communication cycle is complete).
+
+status tracks the server's HTTP response code (whether the server successfully processed your request).
+
+
+server data (response status) :
+200 → Success
+404 → Not Found
+401 → Unauthorized
+403 → Forbidden
+500 → Server Error
+
+readyState
+xhr.readyState (Request Progress)
+This property tells you which stage the request is currently in. It progresses through 5 numerical states (0 to 4):
+
+0 (UNSENT): The XMLHttpRequest object has been created, but .open() has not been called yet.
+
+1 (OPENED): .open() has been called and the connection is established.
+
+2 (HEADERS_RECEIVED): .send() has been called, and response headers have been received.
+
+3 (LOADING): Downloading the response body; data is actively arriving.
+
+4 (DONE): The operation is complete. The entire response has been received (regardless of whether it was successful or failed).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
