@@ -1,0 +1,26 @@
+add table with constrain name 
+
+employee ===> remove constrain (fk)
+
+
+----- update on constrains ?? (get name of these constrains)
+create table employees (
+    SSN INT  PRIMARY KEY  AUTO_INCREMENT,
+    name varchar (255) , 
+    address varchar (255),
+    BD Date ,
+    gender enum ("male","femle"),
+    dep_num INT ,
+    supervisor_id int ,
+    salary double ,
+
+    FOREIGN key (dep_num ) REFERENCES departments (num) 
+     ON UPDATE CASCADE   ON DELETE  SET NULL ,
+
+     FOREIGN key (supervisor_id ) REFERENCES employees (SSN) 
+     ON UPDATE CASCADE   ON DELETE  SET NULL 
+     
+    )
+
+
+

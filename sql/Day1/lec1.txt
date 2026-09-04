@@ -1,0 +1,69 @@
+========== Relation  
+== Degree
+   - (self , Unary , Recursive) Relation : relation between entity and itself
+   - binary Relation : Relation Between Two Entities
+   - ternary Relation : Relation Between Three Entities
+   - n-ary Relation  : Relation Between More Than Tree Entities
+
+== Cardenality Ratio
+  -- one to one :  ====> |  |
+  -- one to many    ==> |   <-
+  -- many to many   ==>  <-   <- 
+
+
+== Mandatory and Not Mandatory ( May - Must )
+
+|| ===> Must 
+o ====> May 
+
+_________
+_________    ====> Must
+_________
+_________    ====> May
+
+======================================= Keys : Attribute 
+== Primary Key : main entity (Unique , NOT NUll )  ===> Number 
+
+-- single ==> ID , SSN , Email
+-- Composite Key : more than one column (Primary Key) ==> (Name , Id )
+-- Foreign Key ==(primary key in table ---> put as foreign key in another table ) ==> relation
+---- Composite key  : name , address  , BD ===>  each column is not unquie 
+but all columns will be unique
+---- Candidate key : 2 columns and each column is unique
+===================== Mapping ==============
+== Mandatory and Not Mandatory 
+
+== Cardenality Ratio : 
+  -- one to one : 
+    -- mandatory  || Not Mandatory  ==>primary key of mandatory put as FK in Table Not Mandatory
+    -- Not Mandatory  || Not Mandatory  ==>primary key any of them put as FK in Table Not Mandatory
+    --  Mandatory  ||  Mandatory  ==>primary key any of them put as FK in Table Not Mandatory
+    --  Mandatory  ||  Mandatory  ==>generate new table and put Two PK of each two tables
+
+  -- one to many  ==> primary key of table one  put as FK in Table many
+  -- many to many => ==>generate new table and put Two PK of each two tables
+
+== atrribute 
+-- composite attribute  : address ==> city , country ===> put city abd country 
+-- multi valued attribute   ==>generate new table and put PK of this table and multi_values attribute
+
+
+
+============ composite key  : name , address  , BD ===>  each column is not unquie 
+but all columns will be unique   ========> Row unique 
+
+name         address   BD 
+mohammed    cairo     2000          =========> ROW
+mohammed     banha     2000        ===========> ROw
+
+
+
+=========== candidate key : 2 columns and each column is unique
+st_id  course_id
+1        011           
+2        012
+
+
+
+*********************** attribute on relation *********
+where you but fk put this attribute

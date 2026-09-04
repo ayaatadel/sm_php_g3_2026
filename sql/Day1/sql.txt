@@ -1,0 +1,187 @@
+=========> mysql  , postgree , Mongo DB 
+
+MYSQL ===> Laragon  (Windows), Wamp  (Windows),  Xamp  (Linux , Windows), Mamp  (Mac Book ), Lamp  (Linux)
+
+xamp : https://www.apachefriends.org/ 
+Laragon : https://www.dropbox.com/scl/fo/ifvh73k2zmzod7m4h3gg5/AGmei0WBa7HLTJp6J65Yc_c/laragon-wamp-v6.1.exe?rlkey=mhnoo9e353ooo5cpj0adjso4e&e=8&st=u3dutb9f&dl=0
+
+
+
+
+============ Database =========================
+
+-------------------------- Database -------------
+
+1- Create Database 
+create database db_name ==> ex: Create DATABASE iti_sum_php_g3_2026
+
+2- Drop Database 
+Drop Database Db_name 
+
+3- Rename Database
+drop database + create 
+
+----------------------------- Tables --------
+-- login databse 
+1- Create table 
+create table table_name(col_name db_type length constrains)
+   -- datatypes  : 
+      INT  , Double  , BIGINT ==> Numbers
+      Boolean ===> True or false 
+      Varchar , Char , TEXT ==> Text 
+      ENUM ==> choices  [male , female]
+      Date : date,
+      timestamp : data + time
+
+   -- Constrains : 
+      Unique 
+      Auto_Increment 
+      Not Null 
+      Primary Key
+      foreign key 
+
+  --  default=value
+
+
+ ---------- primary key : unique + not null
+ /*
+ 
+Department  --------> Delete 
+Employee           
+
+ */
+
+ --- on delete  || on update :  
+ cascade   :  
+ null      : 
+ restric   : 
+
+
+  ******************* Tables ************
+  Department :
+  create table departments (
+    num INT  PRIMARY KEY  AUTO_INCREMENT,
+    name varchar (255) UNIQUE 
+    )
+
+
+Employee : 
+create table employees (
+    SSN INT  PRIMARY KEY  AUTO_INCREMENT,
+    name varchar (255) , 
+    address varchar (255),
+    BD Date ,
+    gender enum ("male","femle"),
+    dep_num INT ,
+    supervisor_id int ,
+    salary double ,
+
+    FOREIGN key (dep_num ) REFERENCES departments (num) 
+     ON UPDATE CASCADE   ON DELETE  SET NULL ,
+
+     FOREIGN key (supervisor_id ) REFERENCES employees (SSN) 
+     ON UPDATE CASCADE   ON DELETE  SET NULL 
+     
+    )
+Department Location : 
+
+1- dep_num , location (primary key) ==> copmosite key 
+
+create table department_locations (
+
+dep_num INT  , location varchar (100),
+primary key (dep_num,location),
+
+  FOREIGN key (dep_num ) REFERENCES departments (num) 
+     ON UPDATE CASCADE   ON DELETE   CASCADE ,
+
+
+)
+
+
+
+Projects :
+create table projects (
+
+  num INT  PRIMARY KEY  AUTO_INCREMENT,
+    name varchar (255) UNIQUE ,
+    location varchar (100),
+    dep_num int ,
+
+  FOREIGN key (dep_num ) REFERENCES departments (num) 
+     ON UPDATE CASCADE   ON DELETE  Set Null 
+
+
+)
+
+Employee_Projects :
+
+// 1     101          20
+create table employee_projects (
+      emp_ssn int ,
+      proj_num int ,
+    work_hour decimal (5.2) ,
+    primary key (emp_ssn , proj_num),
+
+    FOREIGN key (emp_ssn ) REFERENCES employees (ssn) 
+     ON UPDATE CASCADE   ON DELETE RESTRICT,
+
+    FOREIGN key (proj_num ) REFERENCES projects (num) 
+     ON UPDATE CASCADE   ON DELETE  RESTRICT
+
+)
+     
+
+Employee_Dependants:
+create table employee_dependants (
+     name varchar (255),
+      emp_ssn int ,
+      BD Date ,
+    gender enum ("male","femle"),
+    primary key (emp_ssn ,name , BD),
+
+    FOREIGN key (emp_ssn ) REFERENCES employees (ssn) 
+     ON UPDATE CASCADE   ON DELETE Cacade
+
+
+)
+
+======= drop table : drop table tab_name
+
+================== tables (structure)  ========
+tables : add column , delete column , rename table , add constraint 
+
+************* alter *************
+-- add column --
+
+alter table add  col_name datatype length , 
+add constraint cons_name == fk  ....
+
+1- without constrains
+alter table employess add phone varchar 100
+
+--- after specific column :
+ alter table employees add phone varchar (100) after name;
+
+2- with constrains 
+alter table departments add (manger_id  int  null ),
+add CONSTRAINT  fk_department_manager FOREIGN key (manger_id) REFERENCES employees(ssn)
+on UPDATE cascade on DELETE set null
+
+
+
+    ============= insert into tables
+
+    insert into  departments (colums) values ()
+
+
+    ex:
+        insert into  departments ("it")
+
+        ------- more than row ----
+        insert into departments (name)values("cs"),("is");
+
+
+
+        -----------------
+INSERT INTO `employees` ( `name`, `phone`, `address`, `BD`, `gender`, `dep_num`, `salary`, `supervisor_id`) VALUES ('nada', '0123456799', 'sadat', '2000-09-10', 'femle', '2', '10000', '1');
