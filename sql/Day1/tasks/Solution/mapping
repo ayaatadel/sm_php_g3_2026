@@ -1,0 +1,16 @@
+courses :            course_id       courseName        course_fee
+
+student_courses:     student_id    course_id      semester
+
+Student :            student_id          universisty_id      name   city     street zip 
+
+student_phones  :    student_id     phones 
+
+teacher :            teacher_id      name    type          department_id
+
+teacher_courses :    teacher_id        course_id 
+
+department   :       department_id        deperatment_name     cherman_id
+
+
+cherman :             cherman_id   teacher_id  

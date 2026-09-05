@@ -1,0 +1,234 @@
+index 
+transcation 
+using join , Natural Join : 
+
+------------------------------ Queries -----------
+## Search / SELECT / WHERE
+
+1. Display all students' data.
+
+2. Display the name, phone1 and city of all students.
+
+3. Display all courses with their course name and course fee.
+
+4. Display all teachers with their name, phone1 and type.
+
+5. Display all departments with their department name.
+
+6. Display all students who live in Cairo.
+
+7. Display all students who live in Alex or Giza.
+
+8. Display all courses whose fee is greater than 1000 LE.
+
+9. Display all courses whose fee is between 500 and 1500 LE.
+
+10. Display all teachers whose type is full_time.
+
+11. Display all teachers whose type is visiting_part_time.
+
+12. Display all students whose name starts with 'A'.
+
+13. Display all students whose name ends with 'a'.
+
+14. Display all courses whose name contains the word 'Web'.
+
+15. Display all teachers whose name contains 'Mohamed'.
+
+16. Display all departments whose name starts with 'IT'.
+
+17. Display all students who have no second phone number.
+
+18. Display all teachers who have no phone2.
+
+19. Display all students whose university_id is NULL.
+
+---
+
+## JOIN
+
+20. Display the student name and the courses he/she takes.
+
+21. Display the course name and the students who take each course.
+
+22. Display the course name and the names of its teachers.
+
+23. Display the teacher name and the courses he/she teaches.
+
+24. Display the teacher name and his/her department name.
+
+25. Display the department name and the teachers belonging to it.
+
+26. Display the department name, teacher name and teacher type.
+
+27. Display the student name, course name and semester for every course taken by each student.
+
+28. Display the student name, course name and semester for students who took courses in Fall 2025.
+
+29. Display the course name, teacher name and teacher type for all courses and their teachers.
+
+---
+
+## Multiple JOIN
+
+30. Display the student name, course name and teacher name for every student who takes a course and the teacher who teaches that course.
+
+31. Display the student name, course name, teacher name and semester.
+
+32. Display the student name, course name, teacher name and department name.
+
+33. Display all students who take courses taught by teachers from the IT department.
+
+34. Display the course name, teacher name and department name for all courses.
+
+35. Display the names of students who take courses taught by a teacher whose type is full_time.
+
+---
+
+## LEFT JOIN / RIGHT JOIN
+
+36. Display all students and the courses they take, including students who do not take any course.
+
+37. Display all courses and the students who take them, including courses that have no students.
+
+38. Display all teachers and the courses they teach, including teachers who do not teach any course.
+
+39. Display all courses and their teachers, including courses that have no teacher.
+
+40. Display all departments and their teachers, including departments that currently have no teachers.
+
+---
+
+## GROUP BY / HAVING
+
+41. Display the number of students in each course.
+
+42. Display the number of courses taken by each student.
+
+43. Display the number of courses taught by each teacher.
+
+44. Display the number of teachers in each department.
+
+45. Display the average course fee.
+
+46. Display the maximum and minimum course fee.
+
+47. Display the average course fee for all courses taken during each semester.
+
+48. Display each semester and the number of students who took courses during that semester.
+
+49. Display the courses that are taken by more than 5 students.
+
+50. Display the teachers who teach more than 2 courses.
+
+51. Display the departments that have more than 3 teachers.
+
+---
+
+## STORED PROCEDURE
+
+52. Create a stored procedure that displays all students.
+
+53. Create a stored procedure that takes a student_id as a parameter and displays all information about that student.
+
+54. Create a stored procedure that takes a course_id as a parameter and displays the course information.
+
+55. Create a stored procedure that takes a teacher_id as a parameter and displays the teacher information.
+
+56. Create a stored procedure that takes a department_id as a parameter and displays all teachers belonging to that department.
+
+57. Create a stored procedure that takes a student_id and displays all courses taken by that student.
+
+58. Create a stored procedure that takes a course_id and displays all teachers who teach that course.
+
+59. Create a stored procedure that takes a teacher_id and displays all courses taught by that teacher.
+
+60. Create a stored procedure that takes a semester as a parameter and displays all students who took courses during that semester.
+
+61. Create a stored procedure that takes a department_id and returns the number of teachers in that department using an OUT parameter.
+
+62. Create a stored procedure that takes a course_id and returns the number of students taking this course using an OUT parameter.
+
+63. Create a stored procedure that displays the course with the highest course fee.
+
+---
+
+## TRANSACTION
+
+64. Create a transaction to insert a new student into the STUDENT table, then COMMIT the changes.
+
+65. Create a transaction to insert a new course into the COURSE table, then ROLLBACK the changes.
+
+66. Create a transaction to increase all course fees by 10%, then ROLLBACK the changes.
+
+67. Create a transaction to increase the course fee of a specific course by 5%, then COMMIT the changes.
+
+68. Create a transaction to delete a student, then ROLLBACK the transaction.
+
+69. Demonstrate the use of SAVEPOINT by inserting a new student, creating a savepoint, inserting a new course, rolling back to the savepoint, and then committing the remaining changes.
+
+70. Create a transaction that inserts a new student, inserts a new course, creates a SAVEPOINT, inserts a record into the TAKES table, rolls back to the SAVEPOINT, and then commits the transaction.
+
+---
+
+## INDEX
+
+71. Create an index on STUDENT(name).
+
+72. Create an index on COURSE(course_name).
+
+73. Create an index on TEACHER(name).
+
+74. Create an index on DEPARTMENT(department_name).
+
+75. Create a composite index on STUDENT(city, zip).
+
+76. Create a composite index on COURSE(course_name, course_fee).
+
+77. Create a composite index on TEACHER(department_id, type).
+
+78. Create a composite index on TAKES(course_id, semester).
+
+79. Display all indexes created on the STUDENT table.
+
+80. Display all indexes created on the COURSE table.
+
+81. Display all indexes created on the TEACHER table.
+
+82. Drop the index created on STUDENT(name).
+
+83. Drop the index created on COURSE(course_name).
+
+84. Explain why an index on TEACHER(department_id) can improve queries that search for teachers belonging to a specific department.
+
+85. Explain when indexes may reduce database performance.
+
+---
+
+## NATURAL JOIN
+
+86. Using NATURAL JOIN, display the department name and the names of all teachers belonging to each department.
+
+87. Using NATURAL JOIN, display the course name and the semester in which it was taken.
+
+88. Using NATURAL JOIN, display the teacher name and the courses taught by each teacher.
+
+---
+
+## SEARCH + JOIN
+
+89. Display the names of all students and the names of the courses they take where the course fee is greater than 1000 LE.
+
+90. Display the names of all students who take a course during Fall 2025.
+
+91. Display the names of all teachers who teach courses with a fee greater than 1500 LE.
+
+92. Display the names of all teachers belonging to the department named 'Computer Science'.
+
+93. Display the names of all students who take courses taught by full-time teachers.
+
+94. Display the course name, teacher name and department name for courses taught by teachers from a specific department.
+
+95. Display all students who take a course whose name contains 'Programming'.
+
+96. Display all courses taught by teachers whose name starts with 'A'.

@@ -1,0 +1,4 @@
+## Search / SELECT / WHERE
+1. Display all students' data.
+ select * from students 
+2. Display the name, phone1 and city of all students.

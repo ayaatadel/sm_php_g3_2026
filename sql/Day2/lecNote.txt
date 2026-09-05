@@ -1,0 +1,353 @@
+= create data base 
+=create table  
+create table table_name (columns datatypes length constrains )
+
+-- constrains : primary key , foreign key , auto_increment , unique 
+
+-- Alter : table 
+--- alter table employee  rename to employees 
+--- alter table employees add phone varchar (100)
+--- alter table employees add email  varchar (100) unique
+
+
+
+
+************************************ Condtions *****************************
+-- where  ==> condition    
+-- in  ===> already values   ex: in(2000,5000)  ==> all values that are 2000 and 5000 only 
+-- betweeen  ===> start and end  ==> between 2000 and 5000 ==>all values that are between 2000 and 5000 included (2000,5000)
+-- and , or , not  
+
+==================== select ==================
+
+-- select all data from table (all columns) : select * from table_name  ==> select * from employees
+
+-- select sepecici columns : select  name  , age from employees
+
+
+
+  ---------- condtions --------
+-- where  ==> condition    
+-- in  ===> already values   ex: in(2000,5000)  ==> all values that are 2000 and 5000 only 
+-- betweeen  ===> start and end  ==> between 2000 and 5000 ==>all values that are between 2000 and 5000 included (2000,5000)
+-- and , or , not 
+
+  select name , address from employees where salary >2000
+  select name as" User Name" , address as userAddress from employees where gender="male";
+  SELECT * FROM `employees` where salary=2000 or salary=5000
+  SELECT * FROM `employees` where salary in(2000,5000);
+  SELECT * FROM `employees` WHERE salary BETWEEN 2000 and 7000
+      --- عكس ال IN , Between ----------
+  SELECT * FROM `employees` WHERE salary not BETWEEN 5000 and 11000;
+  SELECT * FROM `employees` WHERE salary not in(5000,7000,20000);
+
+
+
+------------- Null values -----------
+SELECT * FROM `employees` WHERE email is NULL;
+SELECT * FROM `employees` WHERE email is NOT NULL;
+
+
+
+  ------- Alias Columns Name  (show) ==> As  ==> not affect in main table 
+  select name as " User Name" , address as userAddress from employees where salary >2000;
+
+
+============================ Update (values in  columns ) =================
+
+update tablename set column=value where condition 
+update employees set salary=15000 where SSN=1;
+update employees set salary=15000 where name="haneen" or name="nada";
+
+UPDATE `employees` SET `email` = 'nada@gmail.com' WHERE employees.name= "nada";
+UPDATE  employees SET email = 'nada@gmail.com' WHERE name= "nada";
+                         
+
+                         -------------- without condition --------
+     update `employees` set supervisor_id =2   ====> affect in all rows in table  
+
+
+============================= Delete (data from table)=======================
+delete from table_name where condition 
+
+--- delete sepecific rows
+delete from employee where ssn=2
+
+-- delete all rows 
+delete FROM `employee_projects`
+
+
+
+------------- Different Between drop and delete ==> drop : table (strucure and data ) && delete : delete only data 
+
+
+
+========================== Distenct =============
+select distenct name drom employee =======> remove repeat name
+
+selecr distenct name , address from employees =====> remove repeat name  ,address
+
+================ limit ====================
+select * from employees limit 5
+select * from employees limit 5 offset 5   ==> 6-10
+                        1-5       ==> ignore for first 5 ==> 
+
+
+=================== Aggregiation function ==============
+--  sum    -- Avg      -- count       -- min         -- max 
+
+ex: 
+SELECT sum(salary) as "Summation of Salary " from employees;
+SELECT avg(salary) as "Avg of Salary " from employees;
+SELECT avg(salary) as "Avg of Salary " from employees where salary>7000;
+SELECT avg(salary) as "Avg of Salary " from employees where salary>7000;
+SELECT min(salary) as "min of Salary " from employees
+select count(*) from employees WHERE salary>7000;
+
+-------------- ORDER -----------
+SELECT * FROM `employees` order BY salary ASC; // ======> from small to large 
+SELECT * FROM `employees` order BY salary DESC;  // ====> from large to small
+
+----------------- like ------------------------
+-- select employees that name start with "M"
+SELECT * FROM `employees` WHERE name LIKE "m%"
+--select employees that name end with "a"
+SELECT * FROM `employees` WHERE name like "%a";
+--select employees that name contain "s"
+SELECT * FROM `employees` WHERE name like "%s%";
+--select employees that name contain second character is "a"
+SELECT * FROM `employees` WHERE name like "_a%";
+--select employees that name contain "a" and at least 4 characters
+SELECT * FROM `employees` WHERE name like "___a%";
+--select employees that assress start with "s" and end with "t" 
+SELECT * FROM `employees` WHERE address like "s%t";
+
+
+***************** sub query *****************
+
+-------- select employee that take max salry ----------------
+SELECT * from employees where salary =(SELECT max(salary) from employees);
+SELECT * from employees where salary =(SELECT min(salary) from employees);
+
+--------- only one value -----------------
+SELECT * from employees where salary =(SELECT min(salary) from employees) LIMIT 1;
+
+
+------------ select maximum salary employess ---------------
+select * from employees ORDER by salary desc LIMIT 1
+
+------------ select minmum salary employess ---------------
+select * from employees ORDER by salary asc LIMIT 1
+
+------------ select seconed employee with minmum salary ---------------
+1- SELECT * FROM `employees` order by (salary) asc limit 1 OFFSET 1; 
+2- SELECT * FROM `employees` where salary > (SELECT min(salary) from employees) ORDER by (salary) asc limit 1;
+
+------------ select seconed employee with maximum salary ---------------
+select * from employees ORDER by salary desc LIMIT 1 OFFSET 1
+SELECT * FROM `employees` where salary < (SELECT max(salary) from employees) order by salary desc LIMIT 1;
+
+
+
+
+
+
+
+************************ Groub By && Having *********************
+Group by : group rows with  same value    ==> AAggregiation functions (sum , avg , min , max , count)
+Having : filteration for group by 
+Where : condition before group by 
+
+
+--select num of employees in each department 
+
+Select dep_num, count(*) as employee_count from employees GROUP by (dep_num);
+
+-- select total salary for employees in each department4
+Select dep_num, sum(salary) as total_salry from employees GROUP by (dep_num);
+
+-- select number of female employees in each department 
+SELECT dep_num , count(*) as female from employees where gender="femle" GROUP by dep_num;
+
+
+Having :  filteration of groub by ===> condition depend on value of having
+
+-- select  depertment which its number of employees more than 2 
+** numder of employees in each department + department count (employees) >2
+
+Select dep_num, count(*) as employee_count from employees GROUP by (dep_num) having count(*)>2
+
+-- select departments that total salry of employees > 12000
+Select dep_num, sum(salary) as salary_total from employees GROUP by (dep_num) having sum(salary)>12000;
+
+-- select  avg salry of employees  salary> 7000 in each department
+Select dep_num, avg(salary) as salary_avg from employees where salary>7000 GROUP by (dep_num);
+
+-- select  department that num of emplyees >2  and employees   count of employees salary > 7000 in each department  
+ عدد الموظفين اللي مرتبهم اكبر من 7000 ف كل قسم وعاوزه اظهر فقط ال يثحشقفةثىف اللي عدد الموظفين فيه اكبر من 1
+
+
+
+
+Select dep_num, COUNT(*) as count_employee from employees where salary>7000 GROUP by (dep_num) having COUNT(*)>2;
+
+-- where   
+-- group by : Aggregiation functions 
+--  count 
+-- having
+
+
+Select dep_num, avg(salary) as avg_salary from employees where salary>7000 GROUP by (dep_num) having avg(salary)>5000;
+
+
+
+****************************** Concat : values of more than columns **************
+SELECT name , concat(email , phone , address) as "employee data" FROM `employees`;
+SELECT name , concat(email , ' :: ', phone , ' :: ', address) as "employee data" FROM `employees`;
+
+
+========================= UNION and UNION ALL  ====================
+
+ UNION :  remove dublicates
+SELECT ssn , dep_num from employees UNION  SELECT manger_id, num from departments;
+ UNION  ALL  :  doesn't remove  dublicates
+SELECT ssn , dep_num from employees UNION All  SELECT manger_id, num from departments;
+
+
+======================== Join ========================
+
+join tables with others ===> tables has relation between itself
+
+-- inner join 
+-- right join
+-- left join
+-- self join
+-- full join
+
+
+--------------- innner join  (particepated data)   -----------
+
+** select department name for each employee
+
+select employees.name as employee_name , employees.email , departments.name as department_name from employees 
+INNER join departments
+ WHERE employees.dep_num = departments.num;
+
+-----------   alias table -----------
+select e.name as employee_name , e.email , d.name as department_name 
+from employees  e
+INNER join departments d
+ WHERE e.dep_num = d.num;
+
+
+** select manager name for each department 
+SELECT d.num , d.name as department_name , e.name as manger_name from departments d INNER join employees e where d.manger_id=e.SSN;
+
+
+------------------- left join  : get data from left table
+employees   left join     departments
+
+Shows all employees, even those not assigned to any department.
+
+sselect e.name as employee_name , e.email , d.name as department_name from employees e
+LEFT JOIN  departments d 
+ON e.dep_num = d.num
+
+
+---------- Right Join : get data in right table 
+
+select all departments even it hasn't any employees
+
+Select e.name as employee_name , e.email , d.name as department_name from employees e
+RIGHT JOIN  departments d 
+ON e.dep_num = d.num;
+ 
+--------------- Full join  : get all data in all tables 
+Select e.name as employee_name , e.email , d.name as department_name from employees e
+RIGHT JOIN  departments d 
+ON e.dep_num = d.num
+union 
+Select e.name as employee_name , e.email , d.name as department_name from employees e
+LEFT JOIN  departments d 
+ON e.dep_num = d.num;
+
+
+----------- self join   : join on table it self 
+** select supervisor name for each employee 
+
+SELECT e.name as employee_name , e.email ,  s.name as supervisor_name from employees e 
+left JOIN  employees s
+on 
+e.supervisor_id=s.SSN;
+
+
+================== view : table --> execute sql ===========
+create view employee_supervisor AS
+SELECT e.name as employee_name , e.email ,  s.name as supervisor_name from employees e 
+left JOIN  employees s
+on 
+e.supervisor_id=s.SSN;
+
+* Select data from views 
+-- SELECT * FROM `employee_supervisor`
+* Drop View 
+--  drop view view_name ex:   drop view employee_supervisor
+
+
+**********************
+create VIEW salary_employee_level As
+SELECT name , salary, 
+case 
+when salary >12000 then "high"
+when salary > 7000 then "mdeium"
+else "low"
+End As "salary level"
+from employees;
+
+================ case when =====
+SELECT name , salary, 
+case 
+when salary >12000 then "high"
+when salary > 7000 then "mdeium"
+else "low"
+End As "salary level"
+from employees;
+
+============== procedure =======
+DELIMITER $$
+CREATE PROCEDURE getAllEmployees()
+BEGIN
+SELECT * from employees;
+end $$
+DELIMITER ;
+
+
+call getAllEmployees();
+
+
+------- take parameters -----
+DELIMITER $$
+CREATE PROCEDURE getAllEmployeeByDepartment(in dep_id int)
+BEGIN
+SELECT * from employees where dep_num=dep_id;
+end $$
+DELIMITER ;
+
+call getAllEmployeeByDepartment(2)
+
+
+------------ out value 
+DELIMITER $$
+CREATE PROCEDURE countEmployees(out total int)
+BEGIN
+SELECT count(*) into total  from employees;
+end $$
+DELIMITER ;
+
+call countEmployees(@total);
+select (@total);
+
+
+
+
+======== drop procedure : drop procedure pro_name if Exists;

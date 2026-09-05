@@ -185,3 +185,10 @@ on UPDATE cascade on DELETE set null
 
         -----------------
 INSERT INTO `employees` ( `name`, `phone`, `address`, `BD`, `gender`, `dep_num`, `salary`, `supervisor_id`) VALUES ('nada', '0123456799', 'sadat', '2000-09-10', 'femle', '2', '10000', '1');
+
+
+
+
+/***
+
+Cannot delete or update a parent row: a foreign key constraint fails (`iti_sm_php_g3_2026`.`employee_projects`, CONSTRAINT `employee_projects_ibfk_2` FOREIGN KEY (`proj_num`) REFERENCES `projects` (`num`) ON DELETE RESTRICT ON UPDATE CASCADE)
