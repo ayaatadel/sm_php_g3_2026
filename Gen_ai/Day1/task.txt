@@ -1,0 +1,13 @@
+1- make prompt to  generate  responsive  web page  using (html , css , js) using ai  (write prompt ans use any technique ) 
+2-Bulid Plan for trip
+out put  of this plan : presentation 
+technique that u use in prompt + prompt 
+
+
+===============
+self study : 
+
+https://maharatech.gov.eg/course/view.php?id=2294
+https://maharatech.gov.eg/course/view.php?id=2299&lang=en
+RAG 
+Agentic Ai 
