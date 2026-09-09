@@ -1,0 +1,9 @@
+extension=bz2
+extension=curl
+extension=fileinfo
+extension=gettext
+extension=mbstring
+extension=mysqli
+extension=openssl
+extension=xsl
+extension=zip

@@ -1,0 +1,16 @@
+PHP : Server Side ======> server (apache) ==> xamp , laragon 
+
+PHP : fullstack  ==> front(html ,css)
+
+php ==> open source , dynamic all operating systems 
+
+
+
+=============== fileName.php 
+
+
+
+// include page in page 
+
+** require  (path)  ==> error ==> stop execution 
+** include  (path)   ==> warning ==> complete run of code

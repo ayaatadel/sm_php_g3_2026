@@ -1,0 +1,20 @@
+========> Day1
+• What is PHP
+• PHP syntax
+• Comments
+• Variables and Constants //define("VERSION", "1.0");  ||  const PI = 3.14;  
+• Datatypes
+• Casting || SetType()
+• Common functions
+• Operators
+• conditional statements (if, switch)
+• Loops
+• Arrays
+$arr=[1,"iti",true];
+$arr2=array("mohammed","ahmed","adel");
+
+
+
+//========= include page in another page
+// require  : path (error) : stop execution of code
+// include : path (error) :waring + complete run of code 

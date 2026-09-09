@@ -1,0 +1,40 @@
+php download : 
+8.3 : https://www.php.net/downloads.php?os=windows&osvariant=windows-downloads&version=8.3
+8.4 : https://www.php.net/downloads.php?os=windows&osvariant=windows-downloads&version=8.4
+
+
+
+------------ extract file after download 
+
+xamp : 
+php ---> rename (php_old )
+folder new version php  ==> rename : php 
+
+
+open folder : 
+php.ini-development -===> copy   ==> paste ==> rename by php.ini
+
+update on extensions 
+
+
+
+evirinemnt variable : add path (C:\xampp\php)
+
+
+===============
+
+
+laragon : 
+c--> laragon--> bin ===> baste folder php 
+php.ini-development -===> copy   ==> paste ==> rename by php.ini
+
+update on extensions 
+
+
+evirinemnt variable --> system variables : add path (C:\laragon\bin\php\php-8.3.30-Win32-vs16-x64)
+
+
+
+======= check on version ======
+open cmd
+php --version

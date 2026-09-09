@@ -1,0 +1,27 @@
+=== show nav bar in all pages using bootstrap classes
+===== show this data in table   using bootstrap classes 
+$data=[
+    ["name"=>"basmala",
+    "address"=>"cairo"]
+    ,
+     ["name"=>"habiba",
+    "address"=>"sadat"]
+    ,
+     ["name"=>"mohammed",
+    "address"=>"menoufia"]
+];
+
+
+== create page login form (email , passsword) , register  form (userName , email , password)
+
+== different between (isset , isEmpty)
+
+
+
+=== search remove key from  assoicative  array  ex: remove name
+
+$users = [
+    "name" => "iti",
+    "email" => "iti@gmail.com"
+];
+
