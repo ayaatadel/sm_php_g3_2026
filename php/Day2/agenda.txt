@@ -15,7 +15,7 @@ Day2
   str_word_count: 
   str_contains() ==> str_pos : 
   str_starts_with : 
-  str_starts_with : 
+  str_ends_with : 
   substr : 
   explode : 
   implode : 

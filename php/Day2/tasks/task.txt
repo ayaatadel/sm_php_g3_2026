@@ -1,0 +1,8 @@
+how to qual two arrays values not refrence
+
+
+======== take data from login and check if user already exist or not 
+
+if user exist --> profile ==> show table of all registered users 
+if usr not exist --> show error message and redirect to login page
+
