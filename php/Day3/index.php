@@ -52,6 +52,18 @@
  * ======= Function Normal ===
  * deal with all types of variables (class or not)
  * 
+ * ============= Interface ============
+ * structre ==========> implementation 
+ * interface can extend more than interfaces 
+ * class can implements more than interfaces =====> implemt all functions in these interfaces
+ * 
+ * --------------- by using interface : u can implimit : multible inheritance , hypried inheritance
+ * 
+ * ================= Namespace =============
+ * must be written on first of code 
+ * 
+ * 
+ * 
  * ========================== Interviews Questions ========
  * 1- How to prevent take object from class : * abstract Class  Or Constructor be Private
  * 2- How to prevent take extend class : make class final class
@@ -60,103 +72,103 @@
  * 
  */
 
- class Human
-{
+//  class Human
+// {
 
 
-    public $name;
-    private $email;
-    protected $address;
-    public static $count;
-    const PI=3.14;
+//     public $name;
+//     private $email;
+//     protected $address;
+//     public static $count;
+//     const PI=3.14;
 
 
-     function __construct($name = "userName", $email = "userEmail", $address = "userAddress")
-    {
-   // --- object ---
-        /**
-         * this : refrence refer on object
-         */
-        $this->name = $name;
-        $this->email = $email;
-        $this->address = $address;
-        Human::$count++;
-    }
+//      function __construct($name = "userName", $email = "userEmail", $address = "userAddress")
+//     {
+//    // --- object ---
+//         /**
+//          * this : refrence refer on object
+//          */
+//         $this->name = $name;
+//         $this->email = $email;
+//         $this->address = $address;
+//         Human::$count++;
+//     }
 
 
-    function setEmail($email)
-    {
-        $this->email = $email;
-    }
+//     function setEmail($email)
+//     {
+//         $this->email = $email;
+//     }
 
 
-    function getEmail()
-    {
-        return $this->email;
-    }
-    function setAddress($address)
-    {
-        $this->address = $address;
-    }
+//     function getEmail()
+//     {
+//         return $this->email;
+//     }
+//     function setAddress($address)
+//     {
+//         $this->address = $address;
+//     }
 
 
-    function getAddress()
-    {
-        return $this->address;
-    }
+//     function getAddress()
+//     {
+//         return $this->address;
+//     }
 
-    static function printCount()
-    {
-         // const 
-         // static 
-         echo "PI : ".Human::PI ,"<br>  Count : ",Human::$count ,"<br>";
+//     static function printCount()
+//     {
+//          // const 
+//          // static 
+//          echo "PI : ".Human::PI ,"<br>  Count : ",Human::$count ,"<br>";
          
-    }
+//     }
 
-  function printData()
-    {
-         echo "PI : ".Human::PI ,"<br>  Count : ",Human::$count ,"<br>";
-        echo  " name: ", $this->name, "<br>", "email : ", $this->email, "<br>", "address : ", $this->address, "<br>";
-        // echo  " name: ", $this->name ,"<br>", "email : ",$this->getEmail(),"<br>","address :",$this->getAddress(),"<br>";
-    }
-}
+//   function printData()
+//     {
+//          echo "PI : ".Human::PI ,"<br>  Count : ",Human::$count ,"<br>";
+//         echo  " name: ", $this->name, "<br>", "email : ", $this->email, "<br>", "address : ", $this->address, "<br>";
+//         // echo  " name: ", $this->name ,"<br>", "email : ",$this->getEmail(),"<br>","address :",$this->getAddress(),"<br>";
+//     }
+// }
 
-// 
-// $h = new Human("iti", "iti@gmail.com", "cairo");
-// $h2 = new Human("iti", "iti@gmail.com", "cairo");
-// $h3 = new Human("iti", "iti@gmail.com", "cairo");
+// // 
+// // $h = new Human("iti", "iti@gmail.com", "cairo");
+// // $h2 = new Human("iti", "iti@gmail.com", "cairo");
+// // $h3 = new Human("iti", "iti@gmail.com", "cairo");
 
-echo "<br>  Count : ",Human::$count ,"<br>";
-Human::printCount();
+// echo "<br>  Count : ",Human::$count ,"<br>";
+// Human::printCount();
 
-// $h->email="hi";  //xxxxxxxxxx == error === email private properity
+// // $h->email="hi";  //xxxxxxxxxx == error === email private properity
 
-// $h->setEmail("ItiMenoufia@gmail.com");
-// echo $h->getEmail();
-// var_dump($h);
-// $h->printHumanData();
+// // $h->setEmail("ItiMenoufia@gmail.com");
+// // echo $h->getEmail();
+// // var_dump($h);
+// // $h->printHumanData();
 
-class Person extends Human
-{
-    public $phone;
-    public $id;
+// class Person extends Human
+// {
+//     public $phone;
+//     public $id;
 
 
-    function __construct($name, $email = "userEmail", $address = "userAddress", $phone = "userPhone", $id = "User Id")
-    {
-        parent::__construct($name, $email, $address);
-        $this->phone = $phone;
-        $this->id = $id;
-    }
+//     function __construct($name, $email = "userEmail", $address = "userAddress", $phone = "userPhone", $id = "User Id")
+//     {
+//         parent::__construct($name, $email, $address);
+//         $this->phone = $phone;
+//         $this->id = $id;
+//     }
 
-    function printData()
-    {
-        parent::printData();
-        echo  "id : ", $this->id, "<br>", "phone : ", $this->phone;
-        // echo  " name: ", $this->name ,"<br>", "email : ",$this->getEmail(),"<br>","address :",$this->getAddress(),"<br>";
-    }
+//     function printData()
+//     {
+//         parent::printData();
+//         echo  "id : ", $this->id, "<br>", "phone : ", $this->phone;
+//         // echo  " name: ", $this->name ,"<br>", "email : ",$this->getEmail(),"<br>","address :",$this->getAddress(),"<br>";
+//     }
 
-}
+// }
 
 /**
  * 
@@ -204,62 +216,160 @@ class Person extends Human
 
 //---------------------- Ex2
 
-abstract class Bank
+// abstract class Bank
+// {
+
+//     protected $balance;
+
+//     function __construct($b)
+//     {
+//         $this->balance = $b;
+//     }
+
+//     // function setBalance($balance)
+//     // {
+//     //     $this->balance=$balance;
+//     // }
+
+//     // function withdraw($depositeMony){
+//     //     if($depositeMony  <= $this->balance)
+//     //         {
+//     //                $this->balance=$this->balance-$depositeMony;
+//     //         }
+
+//     // }
+
+
+//     abstract function deposite($inputMony): float; // return vaou foat
+//     abstract function print(): void;
+//     abstract function withdraw($depositeMony): float;
+// }
+
+// class CairoBank extends Bank
+// {
+//     function __construct($b)
+//     {
+//         parent::__construct($b);
+//     }
+
+//     function deposite($inputMony): float
+//     {
+//         $this->balance = $this->balance + $inputMony;
+//         return $this->balance;
+//     }
+//     function  withdraw($depositeMony): float
+//     {
+//         if ($depositeMony  <= $this->balance) {
+//             $this->balance = $this->balance - $depositeMony;
+//         }
+//         return  $this->balance;
+//     }
+
+//     function print(): void
+//     {
+//         echo "Welcome in Cairo Banak";
+//     }
+// }
+
+
+// $c = new CairoBank(20000);
+// echo $c->withdraw(2000);
+// echo $c->deposite(5000);
+
+
+// ================= Interface ====================
+
+// interface Bank{
+//     /// abstract function 
+
+//     function withdraw($mony):float;
+//     function deposite($mony):float;
+
+// }
+
+// interface Test {
+
+
+// function sayHello();
+// }
+// interface Transcation extends Test , Bank {
+
+// function print();
+// }
+
+// interface X{
+
+// }
+
+// class CairoBank implements Transcation ,X{
+//     public $balance;
+// function withdraw($mony):float{
+//     return $this->balance;
+// }
+//  function deposite($mony):float{
+//     return $this->balance;
+//  }
+
+//  function print()
+//  {
+
+//  }
+
+
+//  function sayHello()
+//  {
+//  }
+// }
+
+// ================= trait ===========
+
+// trait X {
+//     public $name = "iti";
+// }
+// trait Y{
+
+// }
+
+// class User{
+//   use  X,Y;
+// }
+
+
+
+// // =========== namespace ========
+// namespace iti;
+// class User {
+// public $email;
+// }
+
+// namespace openSource;
+// class User{
+//     public $name;
+
+// }
+
+
+// $u=new \openSource\User;
+// $u->name="test";
+// $u=new \iti\User;
+// $u->email="test@gmail.com";
+
+
+
+//================ Composition : has a ============
+
+class Car {
+public $engine;
+function __construct(Engine $engine)
 {
-
-    protected $balance;
-
-    function __construct($b)
-    {
-        $this->balance = $b;
-    }
-
-    // function setBalance($balance)
-    // {
-    //     $this->balance=$balance;
-    // }
-
-    // function withdraw($depositeMony){
-    //     if($depositeMony  <= $this->balance)
-    //         {
-    //                $this->balance=$this->balance-$depositeMony;
-    //         }
-
-    // }
-
-
-    abstract function deposite($inputMony): float; // return vaou foat
-    abstract function print(): void;
-    abstract function withdraw($depositeMony): float;
+$engine->try();
+}
 }
 
-class CairoBank extends Bank
-{
-    function __construct($b)
+class Engine {
+    public $name;
+    function try()
     {
-        parent::__construct($b);
-    }
-
-    function deposite($inputMony): float
-    {
-        $this->balance = $this->balance + $inputMony;
-        return $this->balance;
-    }
-    function  withdraw($depositeMony): float
-    {
-        if ($depositeMony  <= $this->balance) {
-            $this->balance = $this->balance - $depositeMony;
-        }
-        return  $this->balance;
-    }
-
-    function print(): void
-    {
-        echo "Welcome in Cairo Banak";
+        echo "try";
     }
 }
-
-
-$c = new CairoBank(20000);
-echo $c->withdraw(2000);
-echo $c->deposite(5000);
