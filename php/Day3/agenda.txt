@@ -1,0 +1,15 @@
+> OOP 
+> Access Modifires
+  -- public , private , protected 
+> OOP princibles
+  -- inheritance  ==> IS-A   (accepted : single , multi level , harrachical)
+  -- Encapsulation
+  -- Polymorphism (overriding +++ , overloading ----)
+  -- Abestraction  
+> self , this 
+> final 
+>Variable Classes :  static , const
+> Interface 
+> Composition   => Has-A
+> Trait
+> Name Space
