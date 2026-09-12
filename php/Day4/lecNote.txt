@@ -1,0 +1,22 @@
+======== connection with database ======
+-- Mysql i  : mysql
+-- PDO     : Mysql , sql server
+
+
+========== Cradiatials ========
+-- $dbhost="localhost"
+-- $dbType="mysql"
+-- $dbName=" iti_sm_php_g3"
+-- $userName="root"
+-- $password=""
+
+
+============= sql injection =======
+sql injection : inject sql queries into database to get access to the database and get the data from it
+
+-- bindParam() : bind the parameter to the query to avoid sql injection
+   --- named parameters : bindParam(':name', $name) 
+-- positional parameters : bindParam(?, $name)
+
+
+
