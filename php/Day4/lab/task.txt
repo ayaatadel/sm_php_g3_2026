@@ -1,0 +1,23 @@
+=== navbar ==
+if user is logged in
+  show "Logout" button and doesn't show registr button , login button
+else
+  doesn't show "Logout" button ,  shows registr button , login button
+
+
+  ============== task ==========
+  courses :
+  -- handel database class  (global)to all tables :
+  create 
+  update 
+  show 
+  delete 
+  index 
+
+  =========== front end pages ====
+  == from create  to all tables ==
+  == from update to all tables ==
+  == from index page to all tables ==
+
+  index courses :
+  data coursee

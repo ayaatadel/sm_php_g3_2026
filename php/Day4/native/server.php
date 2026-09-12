@@ -134,11 +134,11 @@ if (isset($_POST['btnLogin'])) {
     if($data && $checkPassword)
         {
         header("location:profile.php?success_message=login Successfully");
+        $_SESSION['login_id']=$data['id'];
         exit;
         }else{
               header("location:login.php?error_message=check your email or password ");
         exit;
         }
 }
-
 
