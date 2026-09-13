@@ -1,0 +1,16 @@
+====== Generate array of users 
+         view of page all users 
+
+
+
+--- create  route 
+---- return view ===> create view
+---- function in controller  ===> function in controller (execute) 
+
+=======Methods :=======
+-- get Data  : get
+-- send Data  : post
+-- update Data : put 
+-- delete data : delete 
+
+Route::get('/uers')

@@ -90,7 +90,30 @@ ex: port , dbname , userName , Password  ,api key (gen_ai)
 
 
 
+================== Blade Engine ==========
+balde : enable u to write code php in html with out write tag php <?php ?> ===> use directives
+
 
 
 ========================= Cycle of  laravel  ===========
 
+User ==  send ====> Request  (url : browser) ====> Routes(web.php)==> if (route Exist Or Not )
+
+                           404 NOT fOUND     <====== Response   <==== send===== Route Not Exist 
+                                                                                
+                                                                                 Route Exist
+                                          View <=== send Response== Execute function : return view  
+                                          Model<===  Data Base== Execute function : Controller : function 
+                                           Model ========> response (Data Base)=====> View ====> User
+
+                                          View<=== View == Execute function : Controller : function 
+   
+
+   ============== Route =======
+   Folder (Route) > file(web.php)
+
+   Route::method('url', function)
+
+
+   ============= View ==========
+  Folder(resources) > Folder(views) > create view_page_name.blade.php

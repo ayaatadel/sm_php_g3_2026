@@ -1,0 +1,4 @@
+=========== Day1=======
+-- create laravel project 
+-- show all users  + whlie click button (show) ===> return view(user)==> all user data
+-- show all courses  + whlie click button (show) ===> return view(user)==> all course  data
