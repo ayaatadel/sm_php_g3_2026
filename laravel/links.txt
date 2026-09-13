@@ -1,0 +1,64 @@
+laravel documentation : https://laravel.com/framework/docs
+laracast : https://laracasts.com/
+
+
+============== Installation ========
+
+install : minmum : php 8.3   : https://www.php.net/downloads.php?os=windows&osvariant=windows-downloads&version=8.3
+  ----- thread safe :  php 8.3.0 (x64)  :  php-8.3.0-Win32-vs16-x64.zip
+
+composer :  https://getcomposer.org/download/
+--- Download : for all users 
+--- Next - next
+
+xamp    : https://www.apachefriends.org/ 
+Laragon : https://www.dropbox.com/scl/fo/ifvh73k2zmzod7m4h3gg5/AGmei0WBa7HLTJp6J65Yc_c/laragon-wamp-v6.1.exe?rlkey=mhnoo9e353ooo5cpj0adjso4e&e=8&st=u3dutb9f&dl=0
+
+------ check version of php and composer : composer -v 
+
+
+
+========== change version of php in laragon ======
+1- open laragon
+2- click on menu > php > version > select version of php
+----- change version of php in laragon in c ============
+1- open c 
+2- open laragon folder > bin > php > copy folder of php 8.3 (un zip (فاكك الضغط للفولدر)) > select version of php > copy the path of php
+------- path of version of php in laragon : C:\laragon\bin\php\php-8.3.30-Win32-vs16-x64
+
+3- open php8.3 ==> copey from php-ini-development > rename to php.ini > remove ; from these extensions
+
+-- extensions in php.ini 
+extension=bz2
+extension=curl
+extension=fileinfo
+extension=gettext
+extension=mbstring
+extension=mysqli
+extension=openssl
+extension=xsl
+extension=zip
+
+4- open environment variable >  click on path (system  variables ) > edit > new > paste the path of php 8.3
+
+
+======= check php verion : php -v  
+
+========= change version of php in xamp :
+1- open C  > xamp > php > rename to php_old > copy php3.3 > php3.3.3 > rename with php
+
+2- open php8.3.3 ==> copey from php-ini-development > rename to php.ini > remove (;) from these extensions in php.ini
+
+3- open enviroment variables :  click on path (system  variables ) > edit > new > paste the path of php 8.3
+
+path 8.3 in xamp > C:\xampp\php
+
+
+
+======================================== install laravel project ==========
+
+-- composer global require laravel/installer ===>(install laravel package)
+-- laravel new proj_name       =================> (laravel create new project )
+laravel new demo 
+
+

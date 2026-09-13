@@ -1,0 +1,96 @@
+===== problems in php  ===============
+-- repete code 
+-- organization 
+-- security 
+
+
+
+============ Laravel ====
+laravel : PHP Frame Work 
+Fram work : structure (packages of php)
+package : group of files execute code 
+
+========== Organization ======
+MVC Design Pattern 
+
+Design pattern : code solve sepecific problem 
+
+MVC : Model View Controller 
+-- Model : handel dealing with data base (relation , access sepecific columns)
+-- View : handel frontend pages 
+-- Controller : logic of code (function)
+
+======== Reapeat Of Code ========
+-- OOP 
+-- Single tone Design Pattern : Use only one object 
+/**
+
+-- users : login , register , orders , payment 
+
+**/
+
+======== Fake data  ( data to test code )======
+-- Factory :  shape of data ==> date : date   
+
+-- Seeder  : seed data base using shape of data that in seeder
+
+
+====== Migrations (هجره)=======
+
+Migration : Strucrure of tables 
+
+======== Authentications : (login ,register , forget password  , reset password ) =====
+======== Authorization : Accsess on Data =========
+
+====== Security ===
+-- middleware 
+-- CSRF Token 
+
+======== Full Stack Frame work (Front + Backend)
+==== Backend Frame work : can generate  API  
+==== GenAi : Generative ai  ===== 
+
+
+
+==== React 
+==== vue 
+
+
+
+====================== Documnetation  (laravel 13)==========
+laravel documentation  : https://laravel.com/framework/docs/installation
+
+
+composer : php package manager  ===> must install php before it 
+download : https://getcomposer.org/download/ 
+
+================ install project ==========
+-- composer global require laravel/installer : commad written in first time 
+-- laravel new proj_name  : command written in every time u want to create new laravel project
+
+=============== After Install Project ========
+open .env file : 
+handel database constrains  :DB Type,DB Name ,Db Port , Host , name , password
+
+---------- laravel : hadel defulat tables =======
+  tables run in database :  php artisan migrate 
+
+
+
+========================== Run Laravel Project ========
+-- cd project_name 
+-- php artisan serve
+
+=========================  Important Files In project ======
+-- artisan : tool execute all commands 
+      *** run project : php artisan serve 
+
+-- .env ===> secret variable   ====> dooesn't upload on github
+ex: port , dbname , userName , Password  ,api key (gen_ai)
+
+
+
+
+
+========================= Cycle of  laravel  ===========
+
