@@ -32,3 +32,86 @@
 
 
 
+============================ Relation  (Model) ==========================
+**** model name (مفرد)
+php artisan make:model  Product
+
+one to one  : Pk (one) as foreign in table many  ======> table generate function 
+one to many 
+many to many 
+
+
+============ Ex=============
+1-- One To Many (categories - orders)
+-------------category has many orders 
+-- model category --
+function orders()
+{
+    return $this->hasMany(Order::class)
+
+
+}
+
+--------- Order belongs to one category -------------
+--- model order -------
+function category()
+{
+    return $this->belongsTo(Category::class)
+}
+
+
+2- Many To Many ===> generate new table ===> new table table
+---( orders - Products)  ==> order_items 
+2.1 => orders ---> order items  (one orders has many order items)
+--- model order -------
+function orderItems()
+{
+    return $this->hasMany(Order_Item::class)
+
+
+}
+
+
+---------- Model Order_Item-------
+function order()
+{
+    return $this->belongs(Order::class)
+
+
+}
+
+2.2=>Products ---> order items  (one product has many order items)
+
+--- model product -------
+function orderItems()
+{
+    return $this->hasMany(Order_Item::class)
+
+
+}
+
+
+---------- Model Order_Item-------
+function product()
+{
+    return $this->belongs(product::class)
+
+
+}
+
+
+
+============== One To One ========
+
+user has one phone 
+
+------ model user  ---------
+function phone()
+{
+      return $this->belongs(user::class)
+}
+------ model phone  ---------
+function user()
+{
+      return $this->belongs(phone::class)
+}
