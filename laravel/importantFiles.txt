@@ -1,0 +1,4 @@
+======= Route > web.php 
+===== Model : App > Model ===> php artisan make:Model ModelName
+===== Controller : App > http > Controller ===> php artisan make:Controller NameController  --model=modelName
+===== Migrations: database > migrations ===> php artisan make:migration Migration_name 

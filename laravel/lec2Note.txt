@@ -115,3 +115,16 @@ function user()
 {
       return $this->belongs(phone::class)
 }
+
+
+================== Controller : Logic function ========
+php artisan make:controller CategoryController --model=Category 
+
+
+index : get all data  ============> Category :: model 
+show : show single row (id , email)
+
+
+--- Route > web.php -------
+Route::get('/categories',[CategoryController::class,'index'])->name('categories.index')
+Route::get('/categories/{id}',[CategoryController::class,'show'])->name('categories.show')
