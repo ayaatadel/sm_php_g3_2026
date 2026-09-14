@@ -1,0 +1,45 @@
+============ install Project From github =========
+-- install git : https://git-scm.com/install/windows
+-- Account on Github : https://github.com/signup
+-------------- Email , User Name , Password -----------
+
+=============== Clone ===================
+R.click > git bash here
+git clone https://github.com/ayaatadel/sm_php_g3_2026.git
+
+================= Run Project Laravel =========
+.env.example > copy 
+paste  > rename (copy file) to >.env  > handel constrains data base 
+
+-- open command prompet terminal
+-- cd project_name 
+-- composer install 
+-- php artisan key:generate
+-- php artisan migrate
+
+********* run project : php artisan serve *********
+
+
+================== Upload Project On github ==============
+1- open git hub 
+2- create new repo 
+3- open folder  of project on pc > git bash here > 
+4- git init 
+git add .
+git commit -m "commit_message"  
+********************************* upload for frist time ********************
+--- Error : handel authentication  
+ ------------------ git config --global user.name"userName"
+ ------------------ git config --global user.email"userEmail"
+                      --- default browser (google) ==> userEmail , UserName  + password ----
+                      ******************************************************
+
+git remote add origin repo_gitub_link   ==> ex:git remote add origin https://github.com/iti/test_php_g3.git
+git push origin master 
+
+
+======================= Updates =========
+R.click > git bash here 
+git add .
+git commit -m "commit message"
+git push origin branch name

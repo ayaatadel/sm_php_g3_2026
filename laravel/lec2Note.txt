@@ -1,0 +1,34 @@
+============== DB =============
+ 
+--- Structre Table : Migration  (database > migration )  : https://laravel.com/framework/docs/13.x/migrations#main-content
+----- create table : create migration 
+
+**** Foreign Key : https://laravel.com/framework/docs/13.x/migrations#foreign-key-constraints 
+
+--- relation betwen tables |(Access on colums)  : Model ==> BD  (get Data)
+
+
+************************ Map Tables in Data base **************
+--- table name must be (جمع)
+
+1- Create Migration : php artisan make:migration create_categories_table 
+
+***************** Check status ***************
+-- php artisan migrate:status 
+
+****************** Update on table ******************
+-- add cloumn to table : php artisan make:migration add_phone_to_users_table
+
+2-------------------Rollback on migration=======
+
+***************** rollback ,fresh , refresh --> drop database 
+
+
+** php artisan migrate:rollback            ==> step back
+** php artisan migrate:rollback --step=5   ==> rollback to 5 steps 
+** php atrisan migrate:fresh               ==>(drop tables + create)
+** php atrisan migrate:refresh             ==>(rollback + create)  ===> tables already exist
+** php artisan migrate:rollback --batch=3  ==>  order of migration
+
+
+

@@ -1,17 +1,14 @@
-=======> type of (undefined , nan , null)
+=======> self study function : write code
+
+- slice(strat , end) 
+- subString(strat , end) 
+- subStr(strat , end) 
+-toString
+- slice  
+- splice  
+
+-- constructor function 
+-- generator function 
+-- Async Function 
 
 
-
-// constructor function 
-// generator function 
-// Async Function 
-// higher order function ----> call back function 
-
-
-
-- toString
-- split
--slice
-
-
-====== slice , splice
