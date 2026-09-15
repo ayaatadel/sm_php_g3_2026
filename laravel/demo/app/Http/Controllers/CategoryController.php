@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -31,18 +32,32 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         //
         //   dump($_POST);
         // dump($_REQUEST);
         // dd($request);
         // $name=$request['name'];
-        // $description=$request['description'];
-        $requestData = $request->all();
+        // $deacription=$request['description'];
+        // $requestData = $request->all();
         // $requestData=$request->except("_token");
+//         $requestData=$request->validate(
+// [
+//     'name'=>'required|min:3|max:20|string|unique:categories,name',
+//     'decription'=>'required|min:12|max:50|string'
+// ],[
+//    'name.required'=>'category name is required',
+//    'name.unique'=>'category name is already exist',
+//    'name.min'=>'category name must be at least 3 charcters',
+//     'decription.required'=>'category decription is required',
+//    'decription.min'=>'category description must be at least 12 charcters',
+// ]
+//         );
 
         // dump($requestData);
+        $requestData=$request->validated();
+
         Category::create($requestData);
         return to_route('categories.index');
     }
@@ -73,13 +88,27 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
+    // public function update(Request $request, $id)
     {
         //
         // dump($request);
         $category = Category::findOrFail($id); // get old data
-        $requestData = $request->all();  // get requested data
+        // $requestData = $request->all();  // get requested data
+//         $requestData=$request->validate(
+// [
+//     'name'=>'required|min:3|max:20|string|unique:categories,name',
+//     'decription'=>'required|min:12|max:50|string'
+// ],[
+//    'name.required'=>'category name is required',
+//    'name.unique'=>'category name is already exist',
+//    'name.min'=>'category name must be at least 3 charcters',
+//     'decription.required'=>'category decription is required',
+//    'decription.min'=>'category description must be at least 12 charcters',
+// ]
+//         );
 
+$requestData=$request->validated();
         $category->update($requestData);
         return view('categories.show', compact('category'));
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -82,6 +83,7 @@ Route::put('/categories/update/{id}', [CategoryController::class, 'update'])->na
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destory');
 
 // Route::resource('categories', CategoryController::class);
+Route::resource('products', ProductController::class);
 // show all routes : php atrisan route list
 /**
  *  method           url                                     name                    function

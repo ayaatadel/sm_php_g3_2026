@@ -31,3 +31,14 @@ method ====> default in form (get , post)  ==> delete
 @method('DELETE')
 @csrf ===> csrf token 
 
+============ validation : https://laravel.com/framework/docs/13.x/validation#quick-creating-the-controller =========
+$request->validate (
+    [
+
+// validation 
+    ],[
+        // message
+    ]
+)
+
+------------- Create REquest ==> php artisan make:request CategoryRequest
