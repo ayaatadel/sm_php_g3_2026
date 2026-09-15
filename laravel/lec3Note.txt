@@ -1,0 +1,33 @@
+=== CSRF : Cross Site Request Frogery 
+
+-- input_hidden : token 
+
+-- error :: error 419 page expired
+
+
+update Data
+
+generate form  (create view ): select data   ===> route::get ('/categories/edit/{id}',[CategoryController::class,'edit']);
+
+Data selected ==> update in data base ===> route::post('/categories/update/{id}',[CategoryController::class,'update'])
+
+create Data
+
+generate form : select data  for new Category  ===> route::get ('/categories/create',[CategoryController::class,'create']);
+
+Data selected ==> store  in data base ===> route::get ('/categories/store',[CategoryController::class,'store']);
+
+
+Delete Data :
+route :: delete 
+
+==== > Button > link (get) , button (get )  ===> Method Delete===
+
+Delete , Update ====> Form 
+
+Form ==> action ==> route(categories.delete , $category->id)
+method ====> default in form (get , post)  ==> delete
+
+@method('DELETE')
+@csrf ===> csrf token 
+

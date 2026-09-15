@@ -34,10 +34,18 @@
                 <td>
                     {{ $category['description'] }}
                 </td>
-                <td class="text-center">
-                   <a href="{{ route('categories.index') }}"> <button class="btn btn-success">Back</button></a>
-                    <button class="btn btn-info">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+              <td class="text-center d-flex justify-content-around">
+                    <a href="{{ route('categories.show',  $category->id) }}" class="text-decoration-none"> <button
+                            class="btn btn-warning">View</button></a>
+                    <a href="{{ route('categories.edit',  $category->id) }}" class="text-decoration-none"> <button
+                            class="btn btn-info">Edit</button></a>
+                    <form action="{{ route('categories.destory',$category->id) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Delete</button>
+
+                    </form>
+
                 </td>
             </tr>
 
