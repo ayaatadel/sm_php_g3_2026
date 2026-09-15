@@ -52,6 +52,28 @@
         </tbody>
 
     </table>
+
+    <hr>
+    <h2> All Category Products</h2>
+    <br>
+       <table class="table table-stribe table-bordered w-75 m-auto mt-10">
+        <thead>
+            <th>Id</th>
+            <th>Poduct name</th>
+            <th>Product Description</th>
+            <th>action</th>
+        </thead>
+        <tbody>
+
+
+            
+
+
+
+        </tbody>
+
+    </table>
+
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

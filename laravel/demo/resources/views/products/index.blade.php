@@ -22,6 +22,7 @@
             <th>Id</th>
             <th>name</th>
             <th>Description</th>
+            <th>Category Name</th>
             <th>action</th>
         </thead>
         <tbody>
@@ -36,6 +37,9 @@
                 </td>
                 <td>
                     {{ $product['description'] }}
+                </td>
+                <td>
+                    
                 </td>
                 <td class="text-center d-flex justify-content-around">
                     <a href="{{ route('products.show',$product->id) }}" class="text-decoration-none"> <button
