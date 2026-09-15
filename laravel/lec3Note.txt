@@ -41,4 +41,13 @@ $request->validate (
     ]
 )
 
-------------- Create REquest ==> php artisan make:request CategoryRequest
+------------- Create REquest ==> php artisan make:request CategoryRequest\
+
+
+======== fake data ======
+-------- Factory: https://laravel.com/framework/docs/13.x/eloquent-factories#main-content
+factory :  make data ==> php artisan make:factory ProductFactory
+
+-------- Seeder : https://laravel.com/framework/docs/13.x/seeding#writing-seeders
+seeder  : seed data ==> php artisan make:seeder ProductSeeder
+
