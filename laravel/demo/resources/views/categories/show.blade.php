@@ -65,10 +65,34 @@
         </thead>
         <tbody>
 
+            @foreach($category->products as $product)
+    <tr>
+                <td>
+                    {{ $product['id'] }}
+                </td>
+                <td>
+                   <a href="{{ route('products.show',$product['id']) }}"> {{ $product['name'] }}</a>
+                </td>
+                <td>
+                    {{ $product['description'] }}
+                </td>
+              <td class="text-center d-flex justify-content-around">
+                    <a href="{{ route('categories.index') }}" class="text-decoration-none"> <button
+                            class="btn btn-info">Back</button></a>
+                    <a href="{{ route('categories.edit',  $category->id) }}" class="text-decoration-none"> <button
+                            class="btn btn-info">Edit</button></a>
+                    <form action="{{ route('categories.destory',$category->id) }}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Delete</button>
 
-            
+                    </form>
 
+                </td>
+            </tr>
+            @endforeach
 
+        
 
         </tbody>
 

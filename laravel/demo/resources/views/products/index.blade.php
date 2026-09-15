@@ -39,7 +39,7 @@
                     {{ $product['description'] }}
                 </td>
                 <td>
-                    
+                   <a href="{{ route('categories.show',$product->category->id) }}"> {{ $product->category->name }}</a>
                 </td>
                 <td class="text-center d-flex justify-content-around">
                     <a href="{{ route('products.show',$product->id) }}" class="text-decoration-none"> <button
