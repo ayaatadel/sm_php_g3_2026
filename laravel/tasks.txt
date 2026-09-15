@@ -6,3 +6,14 @@
 =================== Day2==========
 Map tables : all tables : 
 ==== Index , Show all tables (Controller)
+
+
+========== Day 3=========
+handel all cruds (index , show , create , update )to all table
+handel Reuest for all table ex: OrderRequest , ProductRequest , CategoryRequest , UserRequest ...
+handel Seeder and factory to all tables 
+
+------- in page of each category  : show products and orders 
+------- in table of products  : show category name 
+
+--------- handel all relation betwwen tables and use them in pages 
