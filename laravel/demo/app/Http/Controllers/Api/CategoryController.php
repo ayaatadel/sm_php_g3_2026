@@ -33,7 +33,6 @@ class CategoryController extends Controller
         $requestedData =  $request->validated();
         Category::create($requestedData);
         return response()->json([
-
             "message" => "Category created successfully"
         ], 200);
     }
@@ -49,10 +48,10 @@ class CategoryController extends Controller
     //     "message"=>"all categories returned successsfully"
     //     ]);
     // }
-    public function show($category)
+    public function show($id)
     {
         // هنبحث بنفسنا عن طريق الـ ID اللي جاي في الـ URL
-        $categoryData = Category::find($category);
+        $categoryData = Category::find($id);
 
         if ($categoryData) {
             return response()->json([

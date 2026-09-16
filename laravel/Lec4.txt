@@ -43,8 +43,11 @@ request (url)--> middleware ===> route(execute)
 
              moblie application (flutter) ==> front 
              API ==> url ===>
+             ---------- install --------
+             (migratons , models , seeders , factories , middleware , request )
 php artisan install : api 
-
+create controller  : php artisan make:controller Api\ProductController
+===> index , store , show , edit , destroy
 
 ========================= api (back end )functions ===========
 controller , migration , seeder , factory , request , middleware
@@ -61,3 +64,8 @@ function (controller) ==> return json
 
     }
 ]
+
+
+========install postman============
+postman : https://www.postman.com/downloads/ 
+register on postman 

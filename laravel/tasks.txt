@@ -17,3 +17,10 @@ handel Seeder and factory to all tables
 ------- in table of products  : show category name 
 
 --------- handel all relation betwwen tables and use them in pages 
+
+
+============ Day4===========
+handel api to all tables (categories , products, orders , auth controller(login , register))
+
+======= handel login , register by using jit streem  or breez (blade)
+======= handel login , register by using  scantom (api)
