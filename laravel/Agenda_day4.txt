@@ -1,0 +1,61 @@
+== Authentication  (login , Register , logout ): handel
+
+======================
+
+--------- Laravel Authentication -----
+1-breeze
+composer require laravel/breeze --dev
+php artisan breeze:install   ===> blade 
+npm install
+npm run build
+php artisan migrate
+php artisan serve
+
+
+Routes(
+
+    /login
+    /register
+    /logout
+    /forget-password
+)
+
+2- jetstream :
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+npm install
+npm run build
+php artisan migrate
+php artisan serve
+
+==================================
+== Authorization : Access , Privilages 
+== Middleware    : 
+user(url: request) ===> middleware ===> route ==> controller
+/**
+Auth  : login , register
+guest : public pages
+throttle : number of request
+verified : email verified or not
+password.confirm : confirm on password
+**/
+
+
+generate Middleware :
+php artisan make:middleware checkRole
+
+========= middleware Group =======
+
+
+== API : Apllication program Interface ==> php artisan install:api
+---------> routes -==> api.php
+
+** return  : Json [
+    "key"=>value
+] **
+
+
+
+postman : https://www.postman.com/downloads/ 
+register on postman 
+

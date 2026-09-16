@@ -1,0 +1,41 @@
+//======== component : php artisan make:component NavbarComponent
+
+
+Authentication : login , register 
+
+
+-- Native 
+== Controller : AuthController 
+
+=== login  ===> Form   ==> (2 Function , 2 routes)
+    -- function showFormLogin
+    -- function select data from login ==> compare with data 
+== register   ===> Form   ==> (2 Function , 2 routes)
+    -- function showFormRegister
+    -- function select data from register ==> store in data 
+
+
+-- Libraries : breez , jit streem 
+
+
+==================== Autherization : Access =======
+dashboard ===> admin 
+
+products , categories ===> login , register
+
+---------- middleware -------
+/**
+Auth  : login , register
+guest : public pages (welcome)
+throttle : number of request
+verified : email verified or not
+password.confirm : confirm on password
+**/
+
+
+========== midlleware (route)=====
+request (url)--> middleware ===> route(execute)
+             <==  error ==
+
+
+             

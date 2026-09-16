@@ -13,6 +13,12 @@ class UserController extends Controller
     public function index()
     {
         //
+
+// $users=User::all();
+// $categories = Category::orderBy('created_at', 'desc')->get();
+$users=User::orderBy('id','desc')->get();
+return view('users.index',compact('users'));
+
     }
 
     /**

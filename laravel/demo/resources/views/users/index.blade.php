@@ -11,13 +11,16 @@
 </head>
 
 <body>
+    <x-navbarcomponent></x-navbarcomponent>
 
     <h1 class="text-danger text-center"> All Users</h1>
 
 
     {{-- @dump($users) --}}
 
-
+    <a href="{{ route('dashboard') }}">
+        <x-btncomponent class="info" name='back'></x-btncomponent>
+    </a>
     <table class="table table-stribe table-bordered w-75 m-auto mt-10">
         <thead>
             <th>Id</th>
@@ -40,8 +43,9 @@
                 </td>
                 <td class="text-center">
                     <button class="btn btn-warning">View</button>
-                    <button class="btn btn-info">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    {{-- <x-btncomponent class='btn-warning' name='View'> --}}
+                        <button class="btn btn-info">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>
 
