@@ -38,4 +38,26 @@ request (url)--> middleware ===> route(execute)
              <==  error ==
 
 
-             
+             ================= API : Appliation Programming Interface ==
+             API  ====
+
+             moblie application (flutter) ==> front 
+             API ==> url ===>
+php artisan install : api 
+
+
+========================= api (back end )functions ===========
+controller , migration , seeder , factory , request , middleware
+
+has no view ===> blade 
+function (controller) ==> return json 
+
+=========
+[
+    {
+
+    },
+    {
+
+    }
+]
