@@ -1,0 +1,66 @@
+===== Github Copilot :
+ -- Account on github 
+ -- extension 
+
+
+ ====== completion ==> text (prompt that u write to ai)
+
+ -- models : tools in ai ==> can make specific task
+
+ models ==> chat : gebnerate chat 
+ models ==> text : generate image
+
+ ----- audio , text , images , videos 
+
+
+
+ ---------- Ai Assistant -------
+
+Mode : 
+Agent 
+plan 
+Ask
+
+
+=========== Examples for ai assestant 
+Github copilot 
+Cursor 
+
+========
+lovable 
+trait ai 
+========
+  --------- Models ---------
+install on machiene ===> local 
+select api key :  (open ai , ollama , github , groq , gemni)
+
+********************** models ***********
+
+tools : install , api key 
+
+what do you want ? 
+---- what is the model that do this thing ?
+----- input , output , price , quality ======> documnetaion 
+
+---------------- api key : link (models)
+
+--- points : tokens  
+
+== openai 
+== qwen 
+== gemini
+== github 
+== open router 
+
+
+
+
+======
+generate chatboot with beatutiful design and this chat boot can take text and image and response to me
+
+========== Laravel =======
+model chat boot 
+migration : 
+view ===> form (input --->prompt )
+
+route (view chatbot form , select data)

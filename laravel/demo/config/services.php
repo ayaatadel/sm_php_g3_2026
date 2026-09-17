@@ -2,6 +2,13 @@
 
 return [
 
+    'openai' => [
+        'api_key' => env('API_KEY_ChATBOOT'),
+        'model' => env('OPENAI_MODEL', 'gpt-4o-mini'),
+        'image_model' => env('OPENAI_IMAGE_MODEL', 'gpt-image-2.5-flare'),
+        'base_url' => env('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Third Party Services

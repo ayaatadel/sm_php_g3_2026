@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Admin dashboard for managing users, products, and categories." />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="Admin navigation">
+        <div class="sidebar-brand">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <span>AdminPanel</span>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" type="button" data-section="overview">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            <span>Overview</span>
+          </button>
+          <button class="nav-item" type="button" data-section="users">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <span>Users</span>
+          </button>
+          <button class="nav-item" type="button" data-section="categories">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            <span>Categories</span>
+          </button>
+          <button class="nav-item" type="button" data-section="products">
+            <i class="fa-solid fa-box" aria-hidden="true"></i>
+            <span>Products</span>
+          </button>
+          <button class="nav-item" type="button" data-section="analytics">
+            <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+            <span>Analytics</span>
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="admin-chip">
+            <span class="admin-avatar">A</span>
+            <div>
+              <strong>Admin User</strong>
+              <small>admin@store.com</small>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div>
+            <h1 id="page-title">Overview Dashboard</h1>
+            <p id="page-subtitle">Welcome back! Here is what's happening today.</p>
+          </div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input id="global-search" type="search" placeholder="Search records..." />
+            </label>
+            <button class="btn btn-primary" type="button">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+              Add Product
+            </button>
+          </div>
+        </header>
+
+        <!-- Overview -->
+        <section class="panel active" id="overview" aria-labelledby="page-title">
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-icon users"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <p>Total Users</p>
+                <strong id="stat-users">0</strong>
+                <small class="trend up" id="stat-users-trend">+0% this month</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon categories"><i class="fa-solid fa-layer-group"></i></div>
+              <div>
+                <p>Categories</p>
+                <strong id="stat-categories">0</strong>
+                <small class="trend neutral" id="stat-categories-trend">Active catalog</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon products"><i class="fa-solid fa-box"></i></div>
+              <div>
+                <p>Total Products</p>
+                <strong id="stat-products">0</strong>
+                <small class="trend up" id="stat-products-trend">+0 new</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon revenue"><i class="fa-solid fa-sack-dollar"></i></div>
+              <div>
+                <p>Total Revenue</p>
+                <strong id="stat-revenue">$0</strong>
+                <small class="trend up" id="stat-revenue-trend">+0% vs last month</small>
+              </div>
+            </article>
+          </div>
+
+          <div class="charts-grid">
+            <article class="card chart-card">
+              <div class="card-header">
+                <h2>Products by Category</h2>
+                <span class="badge">Distribution</span>
+              </div>
+              <div class="chart-wrap"><canvas id="chart-category-pie" aria-label="Products by category chart"></canvas></div>
+            </article>
+            <article class="card chart-card">
+              <div class="card-header">
+                <h2>Monthly Revenue</h2>
+                <span class="badge">Last 6 months</span>
+              </div>
+              <div class="chart-wrap"><canvas id="chart-revenue-line" aria-label="Monthly revenue chart"></canvas></div>
+            </article>
+          </div>
+
+          <article class="card">
+            <div class="card-header">
+              <h2>Recently Added Products</h2>
+              <button class="link-btn" type="button" data-jump="products">View all</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Created</th>
+                  </tr>
+                </thead>
+                <tbody id="recent-products-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Users -->
+        <section class="panel" id="users" hidden>
+          <article class="card">
+            <div class="card-header">
+              <h2>All Users</h2>
+              <span class="badge" id="users-count">0 users</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Joined</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="users-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Categories -->
+        <section class="panel" id="categories" hidden>
+          <article class="card">
+            <div class="card-header">
+              <h2>All Categories</h2>
+              <span class="badge" id="categories-count">0 categories</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Products</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="categories-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Products -->
+        <section class="panel" id="products" hidden>
+          <article class="card">
+            <div class="card-header">
+              <h2>All Products</h2>
+              <div class="filters">
+                <select id="product-category-filter" aria-label="Filter by category">
+                  <option value="all">All categories</option>
+                </select>
+                <span class="badge" id="products-count">0 products</span>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="products-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <!-- Analytics -->
+        <section class="panel" id="analytics" hidden>
+          <div class="charts-grid analytics-grid">
+            <article class="card chart-card wide">
+              <div class="card-header">
+                <h2>User Registrations</h2>
+                <span class="badge">Monthly trend</span>
+              </div>
+              <div class="chart-wrap tall"><canvas id="chart-users-bar" aria-label="User registrations chart"></canvas></div>
+            </article>
+            <article class="card chart-card wide">
+              <div class="card-header">
+                <h2>Top Categories by Revenue</h2>
+                <span class="badge">Performance</span>
+              </div>
+              <div class="chart-wrap tall"><canvas id="chart-category-bar" aria-label="Category revenue chart"></canvas></div>
+            </article>
+            <article class="card chart-card">
+              <div class="card-header">
+                <h2>Stock Status</h2>
+                <span class="badge">Inventory</span>
+              </div>
+              <div class="chart-wrap"><canvas id="chart-stock-doughnut" aria-label="Stock status chart"></canvas></div>
+            </article>
+            <article class="card chart-card">
+              <div class="card-header">
+                <h2>Order Status</h2>
+                <span class="badge">Fulfillment</span>
+              </div>
+              <div class="chart-wrap"><canvas id="chart-orders-polar" aria-label="Order status chart"></canvas></div>
+            </article>
+          </div>
+
+          <div class="insights-grid">
+            <article class="insight-card">
+              <h3>Best Selling Category</h3>
+              <p id="insight-top-category">—</p>
+            </article>
+            <article class="insight-card">
+              <h3>Average Product Price</h3>
+              <p id="insight-avg-price">—</p>
+            </article>
+            <article class="insight-card">
+              <h3>Low Stock Alert</h3>
+              <p id="insight-low-stock">—</p>
+            </article>
+            <article class="insight-card">
+              <h3>Active Users Rate</h3>
+              <p id="insight-active-users">—</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

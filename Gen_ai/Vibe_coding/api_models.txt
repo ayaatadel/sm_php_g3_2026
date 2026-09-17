@@ -1,0 +1,30 @@
+models from open ai : 
+open postman : 
+url  : https://api.openai.com/v1/models 
+method : get
+
+Authorization: Bearer Token ==>  YOUR_API_KEY"
+
+
+
+
+========= Open Router =====
+curl https://openrouter.ai/api/v1/models 
+  -H "Authorization: Bearer YOUR_OPENROUTER_API_KEY"
+
+
+
+=================
+
+
+
+  ========== gemeni documentation ========
+  https://aistudio.google.com/docs/image-generation?codelanguage=rest
+
+
+  =========== open router documetation =====
+  https://openrouter.ai/docs/api/api-reference/images/generate-an-image
+
+
+  ============ open ai documnetation =======
+  https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create

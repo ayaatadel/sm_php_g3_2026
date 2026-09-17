@@ -1,10 +1,25 @@
  <?php
 
-use App\Http\Controllers\AuthController;
+    use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+Route::view('/', 'welcome')->name('welcome');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::get('/showLogin', [AuthController::class, 'showLogin'])->name('auth.showLogin');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/showRegister', [AuthController::class, 'showRegister'])->name('auth.showRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/chatbot', [ChatbotController::class, 'index'])->name('chatbot.index');
+    Route::post('/chatbot/respond', [ChatbotController::class, 'respond'])->name('chatbot.respond');
+});
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -42,7 +57,6 @@ use Illuminate\Support\Facades\Route;
 
 // });
 
-
 // $courses=[
 //     [
 //   "id"=>1,
@@ -69,13 +83,11 @@ use Illuminate\Support\Facades\Route;
 //     ],
 // ];
 
-
 // Route::get('/courses',function ()use ($courses){
 // return view('courses',compact('courses'));
 // });
 
-
-//============== Authentication Routes
+// ============== Authentication Routes
 // Route::get('/showRegister', [AuthController::class, 'showRegister'])->name('auth.showRegister');
 // Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 // Route::get('/showLogin', [AuthController::class, 'showLogin'])->name('auth.showLogin');
@@ -97,10 +109,6 @@ use Illuminate\Support\Facades\Route;
 
 // //================ Uers Route
 // Route::get('/uers', [UserController::class, 'index'])->name('users.index');
-
-
-
-
 
 // Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 // // Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -124,7 +132,7 @@ use Illuminate\Support\Facades\Route;
  *   GET|HEAD        categories/{category}/edit ..........  categories.edit › CategoryController@edit
  */
 
-///=========== Create  :
+// /=========== Create  :
 /**
  * form : select data
  * store data
